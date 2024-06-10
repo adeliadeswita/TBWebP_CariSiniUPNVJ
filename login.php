@@ -66,7 +66,7 @@
 <body>
     <div class="container">
         <form action="" method="post">
-            <h3>KANTIN <br> "VETERAN" <br> JAKARTA</h3>
+            <h3>CARI SINI<br>UPNVJ</h3>
             <label for="username"><b>Username</b></label>
             <input type="text" placeholder="Masukkan username" name="username" required><br><br>
 
