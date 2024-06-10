@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kantin UPNVJ</title>
+    <title>Cari Sini UPNVJ</title>
     <style>
         body {
             display: flex;
@@ -58,7 +58,6 @@
             padding : 10px 20px 50px 20px;
             font-family: sans-serif;
             box-shadow: 5px 5px 5px lightgrey;
-            /* background-image: url('kantin.webp');   */
         }
         
         </style>
