@@ -142,7 +142,7 @@
                             <?php
                             include("koneksi.php");
 
-                            $query = "SELECT * FROM pengajuan";
+                            $query = "SELECT * FROM pengajuan WHERE status = 'Belum Terverifikasi'";
                             $result = mysqli_query($koneksi, $query);
 
                             if(!$result){
