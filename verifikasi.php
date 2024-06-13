@@ -39,25 +39,25 @@
 
                 <div class="table-responsive">
                     <table class="table table-striped">
-                        <thead>
+                        <thead class="kolom">
                             <tr>
-                                <th class="custom-th" scope="col">Nomor</th>
-                                <th class="custom-th" scope="col">NIM/NIP</th>
-                                <th class="custom-th" scope="col">Nama Lengkap</th>
-                                <th class="custom-th" scope="col">KTP/KTM</th>
-                                <th class="custom-th" scope="col">Kode Barang</th>
-                                <th class="custom-th" scope="col">Nama Barang</th>
-                                <th class="custom-th" scope="col">Tanggal Hilang</th>
-                                <th class="custom-th" scope="col">Spesifikasi</th>
-                                <th class="custom-th" scope="col">Kronologi Kehilangan</th>
-                                <th class="custom-th" scope="col">Status</th>
+                                <th scope="col">Nomor</th>
+                                <th scope="col">NIM/NIP</th>
+                                <th scope="col">Nama Lengkap</th>
+                                <th scope="col">KTP/KTM</th>
+                                <th scope="col">Kode Barang</th>
+                                <th scope="col">Nama Barang</th>
+                                <th scope="col">Tanggal Hilang</th>
+                                <th scope="col">Spesifikasi</th>
+                                <th scope="col">Kronologi Kehilangan</th>
+                                <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody class="isi">
                             <?php
                             include("koneksi.php");
 
-                            $query = "SELECT * FROM pengajuan";
+                            $query = "SELECT * FROM pengajuan WHERE status = 'Belum Terverifikasi'";
                             $result = mysqli_query($koneksi, $query);
 
                             if(!$result){
