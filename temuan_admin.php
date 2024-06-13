@@ -8,95 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
-  
-    <style>
-        .custom-th {
-            color: #186F65;
-            font-size: smaller;
-            text-align:center;
-        }
-
-        .title-temuan {
-            font-size:x-large;
-            font-weight:bold;
-        }
-
-        *{
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-            outline: none;
-            border: none;
-            text-decoration: none;
-        }
-
-        body{
-            display:block;    
-            font-family: 'Poppins';
-        }
-
-        .logo{
-            font-family:'Poppins';
-            font-size:x-large;
-            font-weight:bold;
-            color:white;
-            padding: 0px 0px 0px 30px;
-        }
-
-        nav{
-            display:flex;
-            font-size:medium;
-            background-color:#186F65;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            padding: 5px 0px 5px 0px;
-            top:0;
-            left:0;
-            right:0;
-            z-index:9999;
-            text-decoration:none;
-        }
-
-        nav ul{
-            font-weight: bold;
-            list-style-type:none;
-            margin:0;
-            padding: 8px;
-            overflow:hidden;
-        }
-
-        nav ul li{
-            font-weight: bold;
-            float: left;
-        }
-
-        nav ul li a{
-            font-weight: bold;
-            padding-right:30px;
-            padding-left: 30px;
-            color: white;
-            text-decoration:none;
-        }
-
-        .nav-navigasi ul li a:hover{
-            font-weight: bold;
-            padding: 30px;
-            color:#65C18C;
-        }
-
-        .btn{
-            color: #65C18C;
-            border-color: lightgray;
-        }
-
-        .btn:hover {
-            color: white;
-            background-color: #65C18C; 
-            border-color: #65C18C;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="bg-light">
     <nav class="nav">
         <div class="logo">CariSini UPNVJ</div>
@@ -207,6 +121,9 @@
             </section>
         </div>
     </div>
+    <footer>
+        All Rights Reserved | © CariSini UPNVJ! - 2024
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
