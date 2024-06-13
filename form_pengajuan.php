@@ -78,7 +78,7 @@
       <div class="nav-navigasi">
         <ul>
             <li><a href="./temuan_user.php">Informasi Temuan</a></li>
-            <li><a href="./form_pengajuan.php">Verifikasi</a></li>
+            <li><a href="./form_pengajuan.php">Pengajuan</a></li>
             <li><a href="./histori_user.php">Histori</a></li>
           </ul>
       </div>
