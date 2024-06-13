@@ -140,7 +140,6 @@
                     <table class="table table-striped mt-4">
                         <thead>
                             <tr>
-                                <th class="custom-th" scope="col">Nomor</th>    
                                 <th class="custom-th" scope="col">Kode Barang</th>    
                                 <th class="custom-th" scope="col">Nama Barang</th>
                                 <th class="custom-th" scope="col">Deskripsi</th>
@@ -167,14 +166,12 @@
                             if(!$result){
                                 die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
                             }
-                            $i = 1;
 
                             while($data = mysqli_fetch_assoc($result)) {
                                 $raw_date = strtotime($data["tgl_temu"]);
                                 $date = date("d - m - Y", $raw_date);
 
                                 echo "<tr>";
-                                echo "<th scope=\"row\">$i</th>";
                                 echo "<td>$data[kd_brg]</td>";
                                 echo "<td>$data[nm_brg]</td>";
                                 echo "<td>$data[spek_brg]</td>";
@@ -192,7 +189,6 @@
                                 echo "</form>";
 
                                 echo "</tr>";
-                                $i++;
                             }
                             mysqli_free_result($result);
                             mysqli_close($koneksi);
