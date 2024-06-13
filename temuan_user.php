@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-light">
+<body>
     <nav class="nav">
         <div class="logo">CariSini UPNVJ</div>
         <div class="nav-navigasi">
@@ -23,10 +23,10 @@
         </div>
     </nav>
 
-    <div style="margin-top: 70px;">
+    <div class="flex-container">
         <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
-            <header class="header-title mb-2">
-                <h1 class="title-temuan"><a style="text-decoration: none;"><span style= "color:#186F65">Informasi </span><span>Temuan</span></a></h1>
+            <header>
+                <h1 class="title"><span style="color:#186F65">Informasi </span><span>Temuan</span></h1>
                 <hr>
             </header>
 
@@ -57,16 +57,16 @@
                 if (mysqli_num_rows($result) > 0) {
                     echo '<div class="table-responsive">';
                     echo '<table class="table table-striped mt-4">';
-                    echo '<thead>';
+                    echo '<thead class="kolom">';
                     echo '<tr>';
-                    echo '<th class="custom-th" scope="col">Kode Barang</th>';
-                    echo '<th class="custom-th" scope="col">Nama Barang</th>';
-                    echo '<th class="custom-th" scope="col">Deskripsi</th>';
-                    echo '<th class="custom-th" scope="col">Gambar</th>';
-                    echo '<th class="custom-th" scope="col">Tanggal Temuan</th>';
-                    echo '<th class="custom-th" scope="col">Lokasi Temuan</th>';
-                    echo '<th class="custom-th" scope="col">Lokasi Pengamanan</th>';
-                    echo '<th class="custom-th" scope="col">Nama Petugas</th>';
+                    echo '<th scope="col">Kode Barang</th>';
+                    echo '<th scope="col">Nama Barang</th>';
+                    echo '<th scope="col">Deskripsi</th>';
+                    echo '<th scope="col">Gambar</th>';
+                    echo '<th scope="col">Tanggal Temuan</th>';
+                    echo '<th scope="col">Lokasi Temuan</th>';
+                    echo '<th scope="col">Lokasi Pengamanan</th>';
+                    echo '<th scope="col">Nama Petugas</th>';
                     echo '</tr>';
                     echo '</thead>';
                     echo '<tbody>';
@@ -75,21 +75,21 @@
                         $raw_date = strtotime($data["tgl_temu"]);
                         $date = date("d - m - Y", $raw_date);
 
-                        echo "<tr>";
+                        echo "<tr class='isi'>";
                         echo "<td>$data[kd_brg]</td>";
                         echo "<td>$data[nm_brg]</td>";
                         echo "<td>$data[spek_brg]</td>";
-                        echo "<td><img src='data:image;base64, " . base64_encode($data['foto_brg']) . "' alt='Image' style='width:80px; height:80px;'></td>";
+                        echo "<td><img src='foto/" . $data['foto_brg'] . "' alt='image' style='width:80px; height:80px;'></td>";
                         echo "<td>$date</td>";
                         echo "<td>$data[lok_temu]</td>";
                         echo "<td>$data[lok_aman]</td>";
                         echo "<td>$data[petugas]</td>";
                         echo "</tr>";
                     }
-
                     echo '</tbody>';
                     echo '</table>';
                     echo '</div>';
+
                 } else {
                     echo "<div class=\"alert alert-danger my-3\">Barang Tidak Ditemukan</div>";
                 }
