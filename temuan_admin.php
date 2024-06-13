@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -136,66 +137,73 @@
                 }
                 ?>
 
-                <div class="table-responsive">
-                    <table class="table table-striped mt-4">
-                        <thead>
-                            <tr>
-                                <th class="custom-th" scope="col">Kode Barang</th>    
-                                <th class="custom-th" scope="col">Nama Barang</th>
-                                <th class="custom-th" scope="col">Deskripsi</th>
-                                <th class="custom-th" scope="col">Gambar</th>
-                                <th class="custom-th" scope="col">Tanggal Temuan</th>
-                                <th class="custom-th" scope="col">Lokasi Temuan</th>
-                                <th class="custom-th" scope="col">Lokasi Pengamanan</th>
-                                <th class="custom-th" scope="col">Nama Petugas</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            include("koneksi.php");
+                <?php
+                include("koneksi.php");
 
-                            if (isset($_GET['cari'])) {
-                                $cari = $_GET['cari'];
-                                $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%'";
-                            } else {
-                                $query = "SELECT * FROM temuan";
-                            }
+                if (isset($_GET['cari'])) {
+                    $cari = $_GET['cari'];
+                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%'";
+                } else {
+                    $query = "SELECT * FROM temuan";
+                }
 
-                            $result = mysqli_query($koneksi, $query);
+                $result = mysqli_query($koneksi, $query);
 
-                            if(!$result){
-                                die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
-                            }
+                if(!$result){
+                    die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
+                }
 
-                            while($data = mysqli_fetch_assoc($result)) {
-                                $raw_date = strtotime($data["tgl_temu"]);
-                                $date = date("d - m - Y", $raw_date);
+                if (mysqli_num_rows($result) > 0) {
+                    echo '<div class="table-responsive">';
+                    echo '<table class="table table-striped mt-4">';
+                    echo '<thead>';
+                    echo '<tr>';
+                    echo '<th class="custom-th" scope="col">Kode Barang</th>';
+                    echo '<th class="custom-th" scope="col">Nama Barang</th>';
+                    echo '<th class="custom-th" scope="col">Deskripsi</th>';
+                    echo '<th class="custom-th" scope="col">Gambar</th>';
+                    echo '<th class="custom-th" scope="col">Tanggal Temuan</th>';
+                    echo '<th class="custom-th" scope="col">Lokasi Temuan</th>';
+                    echo '<th class="custom-th" scope="col">Lokasi Pengamanan</th>';
+                    echo '<th class="custom-th" scope="col">Nama Petugas</th>';
+                    echo '</tr>';
+                    echo '</thead>';
+                    echo '<tbody>';
 
-                                echo "<tr>";
-                                echo "<td>$data[kd_brg]</td>";
-                                echo "<td>$data[nm_brg]</td>";
-                                echo "<td>$data[spek_brg]</td>";
-                                echo "<td><img src='data:image;base64, " . base64_encode($data['foto_brg']) . "' alt='Image' style='width:80px; height:80px;'></td>";
-                                echo "<td>$date</td>";
-                                echo "<td>$data[lok_temu]</td>";
-                                echo "<td>$data[lok_aman]</td>";
-                                echo "<td>$data[petugas]</td>";
+                    while($data = mysqli_fetch_assoc($result)) {
+                        $raw_date = strtotime($data["tgl_temu"]);
+                        $date = date("d - m - Y", $raw_date);
 
-                                echo "<td class=\"text-center\">";
-                                echo "<form action=\"./ubah_barang.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                                echo "<input type=\"submit\" name=\"submit\" value=\"Ubah\" style=\"width:80px; background-color: #65C18C; color: white;\" 
-                                      onmouseenter=\"this.style.backgroundColor='#186F65'\" 
-                                      onmouseout=\"this.style.backgroundColor='#65C18C'\" class=\"btn btn-info text-white\">";
-                                echo "</form>";
+                        echo "<tr>";
+                        echo "<td>$data[kd_brg]</td>";
+                        echo "<td>$data[nm_brg]</td>";
+                        echo "<td>$data[spek_brg]</td>";
+                        echo "<td><img src='data:image;base64, " . base64_encode($data['foto_brg']) . "' alt='Image' style='width:80px; height:80px;'></td>";
+                        echo "<td>$date</td>";
+                        echo "<td>$data[lok_temu]</td>";
+                        echo "<td>$data[lok_aman]</td>";
+                        echo "<td>$data[petugas]</td>";
 
-                                echo "</tr>";
-                            }
-                            mysqli_free_result($result);
-                            mysqli_close($koneksi);
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
+                        echo "<td class=\"text-center\">";
+                        echo "<form action=\"./ubah_barang.php\" method=\"post\" class=\"d-inline-block mb-2\">";
+                        echo "<input type=\"submit\" name=\"submit\" value=\"Ubah\" style=\"width:80px; background-color: #65C18C; color: white;\" 
+                              onmouseenter=\"this.style.backgroundColor='#186F65'\" 
+                              onmouseout=\"this.style.backgroundColor='#65C18C'\" class=\"btn btn-info text-white\">";
+                        echo "</form>";
+
+                        echo "</tr>";
+                    }
+
+                    echo '</tbody>';
+                    echo '</table>';
+                    echo '</div>';
+                } else {
+                    echo "<div class=\"alert alert-danger my-3\">Barang Tidak Ditemukan</div>";
+                }
+
+                mysqli_free_result($result);
+                mysqli_close($koneksi);
+                ?>
             </section>
         </div>
     </div>
