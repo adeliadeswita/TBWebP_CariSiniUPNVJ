@@ -126,7 +126,6 @@
                     <table class="table table-striped mt-4">
                         <thead>
                             <tr>
-                                <th class="custom-th" scope="col">Nomor</th>
                                 <th class="custom-th" scope="col">NIM/NIP</th>
                                 <th class="custom-th" scope="col">Nama Lengkap</th>
                                 <th class="custom-th" scope="col">KTP/KTM</th>
@@ -148,14 +147,12 @@
                             if(!$result){
                                 die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
                             }
-                            $i = 1;
 
                             while($data = mysqli_fetch_assoc($result)) {
                                 $raw_date = strtotime($data["tgl_hilang"]);
                                 $date = date("d - m - Y", $raw_date);
 
                                 echo "<tr>";
-                                echo "<th scope=\"row\">$i</th>";
                                 echo "<td>$data[username]</td>";
                                 echo "<td>$data[nm_lengkap]</td>";
                                 echo "<td><img src='data:ktm_ktm;base64, " . base64_encode($data['ktp_ktm']) . "' alt='Image' style='width:120px; height:80px;'></td>";
@@ -177,7 +174,6 @@
                                 echo "</form>";
                                 echo "</td>";
                                 echo "</tr>";
-                                $i++;
                     
                             mysqli_free_result($result);
                             mysqli_close($koneksi);
