@@ -29,8 +29,15 @@
     <section> 
   <?php 
     include("koneksi.php"); 
+    $query = mysqli_query($koneksi, "SELECT max(kd_brg) as kodeTerbesar FROM temuan");
+    $data = mysqli_fetch_array($query);
+    $kd_brg = $data['kodeTerbesar'];
+    $urutan = (int) substr($kd_brg, 4, 5);
+    $urutan++;
+    $awalan = "CH24";
+    $kd_brg = $awalan . sprintf("%05s", $urutan);
+
     if (isset($_POST["submit"])) {
-      $kd_brg = htmlentities(strip_tags(trim($_POST["kd_brg"]))); 
       $nm_brg = htmlentities(strip_tags(trim($_POST["nm_brg"]))); 
       $spek_brg = htmlentities(strip_tags(trim($_POST["spek_brg"]))); 
       $tgl_temu = htmlentities(strip_tags(trim($_POST["tgl_temu"]))); 
@@ -58,17 +65,6 @@
     
     $error_message="";
 
-    if (empty($kd_brg)) { 
-      $error_message .= "<li>Kode barang harus diisi</li>"; 
-    }
-    elseif (!preg_match("/^[a-zA-Z0-9]{9}$/",$kd_brg) ) { 
-        $error_message .= "<li>Kode barang harus terdiri dari 9 karakter</li>"; 
-    }
-    $kd_brg = mysqli_real_escape_string($koneksi,$kd_brg); 
-    $query = "SELECT * FROM temuan WHERE kd_brg='$kd_brg'"; 
-    $result = mysqli_query($koneksi, $query);
-    $num_rows = mysqli_num_rows($result); 
-
     if (empty($nm_brg)) { 
         $error_message .= "<li>Nama barang harus diisi</li>"; 
     }
@@ -92,7 +88,6 @@
     }
 
     if ($error_message === "") { 
-        $kd_brg = mysqli_real_escape_string($koneksi,$kd_brg); 
         $nm_brg = mysqli_real_escape_string($koneksi,$nm_brg); 
         $spek_brg = mysqli_real_escape_string($koneksi,$spek_brg); 
         $tgl_temu = mysqli_real_escape_string($koneksi,$tgl_temu); 
@@ -124,7 +119,7 @@
     <form action="tambah_barang.php" method="post" class="form" enctype="multipart/form-data">
       <div class="mb-3"> 
         <label for="kd_brg" class="form-label">Kode Barang</label> 
-        <input type="text" name="kd_brg" id="kd_brg" class="form-control" value="<?php echo (isset($kd_brg)) ? $kd_brg : ""; ?>" placeholder="Contoh : CS24XXXXX">
+        <input type="text" name="kd_brg" id="kd_brg" class="form-control" value="<?php echo $kd_brg; ?>" readonly>
       </div> 
       <div class="mb-3"> 
         <label for="nm_brg" class="form-label">Nama Barang</label> 
