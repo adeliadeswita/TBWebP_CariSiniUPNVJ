@@ -24,8 +24,8 @@
     </nav>
 
     <div class="flex-container">
-        <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
-            <header>
+        <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
+            <header class="header-title mb-2">
                 <h1 class="title"><span style="color:#186F65">Informasi </span><span>Temuan</span></h1>
                 <hr>
             </header>
