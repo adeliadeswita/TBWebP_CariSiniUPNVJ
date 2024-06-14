@@ -26,7 +26,7 @@
 
     <div class="flex-container">
         <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
-            <header style="margin-bottom:-30px;">
+            <header>
                 <h1 class="title"><a style="text-decoration: none;"><span style= "color:#186F65">Histori </span><span>Verifikasi</span></a></h1>
                 <hr>
             </header>
@@ -39,7 +39,7 @@
                 ?>
 
                 <div class="table-responsive">
-                    <table class="table table-striped mt-4">
+                    <table class="table table-striped">
                         <thead>
                             <tr class="kolom">
                                 <th scope="col">NIM/NIP</th>

@@ -20,10 +20,10 @@
           </ul>
       </div>
   </nav>
-  <div class="bg-light"> 
-    <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5"> 
-    <header class="header-title mb-4"> 
-    <h1 class="form-barang"><b><a style="text-decoration: none;"><span style= "color:#186F65">Form</span><span> Barang Hilang</span></a></b></h1>
+  <div class="flex-container"> 
+    <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5"> 
+    <header class="header-title mb-2"> 
+    <h1 class="title"><b><span style= "color:#186F65">Form</span><span> Barang Hilang</span></b></h1>
         <hr> 
     </header> 
     <section> 
@@ -162,16 +162,18 @@
       ?>
       </select>
       <br>
-      <div class="mb-3"> 
+      <div class="mb-2"> 
         <label for="petugas" class="form-label">Petugas</label> 
         <input type="text" name="petugas" id="petugas" class="form-control" value="<?php echo (isset($petugas)) ? $petugas : ""; ?>"> 
       </div>
       <br> 
-      <div class="mb-3"> 
-        <input type="submit" name="submit" value="Submit" class="btn btn-primary"> 
+      <div> 
+        <input type="submit" name="submit" value="Tambah"  class="btn float-start" 
+        style="width: 100px; background-color: #65C18C; color: white;"
+        onmouseenter="this.style.backgroundColor='#186F65'"
+        onmouseout="this.style.backgroundColor='#65C18C'"> 
       </div> 
     </form> 
-    
   </section> 
   <?php 
       mysqli_close($koneksi); 

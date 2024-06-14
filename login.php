@@ -10,8 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Set sesi pengguna
         $_SESSION['username'] = $username;
 
-
-        if (stripos($username, "admin") !== false) {
+        if (strlen($username > 11) !== false) {
             header("Location: temuan_admin.php"); //Kalo username mengandung admin maka akan dialihkan ke halaman temuan_admin.php
         } else {
             header("Location: temuan_user.php");
@@ -22,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Username atau password salah!";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -43,12 +41,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-color: #186F65;
         }
 
-
         h3 {
-            margin: 50px 50px 100px 50px;
+            margin: 20px;
             text-align: center;
-            font-size: 100px;
-            color: white;
+            font-size:50px;
+            color: #186F65;
             font-family: 'Poppins';
             font-weight: bold;
         }
@@ -59,38 +56,44 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin: 8px 0;
             display: inline-block;
             border: 1px solid grey;
-            border-radius: 30px;
+            border-radius: 20px;
             box-sizing: border-box;
         }
 
         input {
-            width: 1000px;
+            width: 800px;
             align-items: center;
             display: flex;
             justify-content: center;
-            /* color: black; */
         }
 
         input[type=submit] {
             padding: 14px 20px;
             background-color: #65C18C;
             border: 1px solid grey;
-            border-radius: 30px;
+            border-radius: 20px;
             color: white;
             cursor: pointer;
             font-weight: bold;
         }
 
         input[type=submit]:hover {
-            background-color: white;
-            border: 1px solid #65C18C;
-            border-radius: 30px;
-            color: #65C18C;
+            background-color: #186F65;
+            border-radius: 20px;
+            color: white;
         }
 
         .container {
+            width: 100%;
+            max-width: 1000px;
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px;
+            background-color: #f9f9f9;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -104,17 +107,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p style='color:red;'>$error</p>";
             }
             ?>
-            <!-- <label for="username"><b>Username</b></label> -->
-            <input type="text" placeholder="Masukkan username" name="username" required><br><br>
-
-            <!-- <label for="password"><b>Password</b></label> -->
-            <input type="password" placeholder="Masukkan password" name="password" required>
+            <input type="text" placeholder="Masukkan NIM/NIP" name="username" required><br><br>
+            <input type="password" placeholder="Masukkan Password" name="password" required>
             <br><br>
-
+            
             <div class="login-btn">
-                <input type="submit" value="Login">
+                <input type="submit" value="Masuk">
             </div>
-
         </form>
     </div>
 
