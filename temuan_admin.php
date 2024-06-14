@@ -24,7 +24,7 @@
     </nav>
 
     <div class="flex-container">
-        <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
+        <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
             <header class="header-title mb-2">
                 <h1 class="title"><span style="color:#186F65">Informasi </span><span>Temuan</span></h1>
                 <hr>
@@ -37,7 +37,7 @@
                            onmouseenter="this.style.backgroundColor='#186F65'"
                            onmouseout="this.style.backgroundColor='#65C18C'">Tambah</a>
                     </div>
-                    <div style="margin-right:-660px;">
+                    <div style="margin-right:-850px;">
                         <form class="form-inline my-2 my-lg-0 clearfix d-flex">
                             <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Cari" aria-label="cari">
                             <button class="btn btn-outline my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>

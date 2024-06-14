@@ -41,7 +41,6 @@
                     <table class="table table-striped">
                         <thead class="kolom">
                             <tr>
-                                <th scope="col">Nomor</th>
                                 <th scope="col">NIM/NIP</th>
                                 <th scope="col">Nama Lengkap</th>
                                 <th scope="col">KTP/KTM</th>
@@ -63,14 +62,12 @@
                             if(!$result){
                                 die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
                             }
-                            $i = 1;
 
                             while($data = mysqli_fetch_assoc($result)) {
                                 $raw_date = strtotime($data["tgl_hilang"]);
                                 $date = date("d - m - Y", $raw_date);
 
                                 echo "<tr>";
-                                echo "<th scope=\"row\">$i</th>";
                                 echo "<td>$data[username]</td>";
                                 echo "<td>$data[nm_lengkap]</td>";
                                 echo "<td><img src='data:ktm_ktm;base64, " . base64_encode($data['ktp_ktm']) . "' alt='Image' style='width:120px; height:80px;'></td>";
@@ -85,7 +82,7 @@
                                 echo "<input type=\"hidden\" name=\"username\" value=\"$data[username]\">";
 
                                 if ($data['status'] == 'Terverifikasi') {
-                                    echo "<input type=\"button\" value=\"Verifikasi\" class=\"btn btn-success\" disabled>";
+                                    echo "<input type=\"button\" value=\"Verifikasi\" class=\"btn btn-success\">";
                                 } else {
                                     echo "<input type=\"submit\" name=\"verifikasi\" value=\"Verifikasi\" class=\"btn btn-info text-white\"
                                         style=\"width:100px; background-color: #65C18C; color: white;\" 
@@ -95,7 +92,6 @@
                                 echo "</form>";
                                 echo "</td>";
                                 echo "</tr>";
-                                $i++;
                             }
                             mysqli_free_result($result);
                             mysqli_close($koneksi);
