@@ -35,7 +35,7 @@
         $kd_brg = $data['kodeTerbesar'];
         $urutan = (int) substr($kd_brg, 4, 5);
         $urutan++;
-        $awalan = "CH24";
+        $awalan = "CS24";
         $kd_brg = $awalan . sprintf("%05s", $urutan);
 
         session_start();
@@ -48,7 +48,6 @@
           $lok_temu = htmlentities(strip_tags(trim($_POST["lok_temu"])));
           $lok_aman = htmlentities(strip_tags(trim($_POST["lok_aman"])));
           $petugas = htmlentities(strip_tags(trim($_POST["petugas"])));
-          $foto_brg = "";
 
           if (isset($_FILES['foto_brg']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
             $tmp_file = $_FILES['foto_brg']['tmp_name'];
@@ -170,6 +169,9 @@
           <div>
             <input type="submit" name="submit" value="Tambah" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;" onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
+        </form>
+        <form action="ubah_barang.php" method="post" class="d-inline-block mb-2">
+        <input type="hidden" name="kd_brg" value="<?php echo $data['kd_brg']; ?>">
         </form>
       </section>
       <?php
