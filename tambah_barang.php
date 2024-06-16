@@ -6,7 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</style>
 </head> 
 
 <body>
@@ -32,9 +31,9 @@
     $query = mysqli_query($koneksi, "SELECT max(kd_brg) as kodeTerbesar FROM temuan");
     $data = mysqli_fetch_array($query);
     $kd_brg = $data['kodeTerbesar'];
-    $urutan = (int) substr($kd_brg, 4, 5);
+    $urutan = (int) substr($kd_brg, 5, 5);
     $urutan++;
-    $awalan = "CH24";
+    $awalan = "CS24";
     $kd_brg = $awalan . sprintf("%05s", $urutan);
 
     if (isset($_POST["submit"])) {
@@ -44,7 +43,6 @@
       $lok_temu = htmlentities(strip_tags(trim($_POST["lok_temu"]))); 
       $lok_aman = htmlentities(strip_tags(trim($_POST["lok_aman"]))); 
       $petugas = htmlentities(strip_tags(trim($_POST["petugas"]))); 
-      $foto_brg = "";
 
       if (isset($_FILES['foto_brg']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
         $tmp_file = $_FILES['foto_brg']['tmp_name'];
@@ -169,6 +167,9 @@
         onmouseout="this.style.backgroundColor='#65C18C'"> 
       </div> 
     </form> 
+    <form action="ubah_barang.php" method="post" class="d-inline-block mb-2">
+    <input type="hidden" name="kd_brg" value="<?php echo $data['kd_brg']; ?>">
+    </form>
   </section> 
   <?php 
       mysqli_close($koneksi); 
