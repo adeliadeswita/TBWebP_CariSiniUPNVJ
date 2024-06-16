@@ -35,12 +35,18 @@
         $kd_brg = $data['kodeTerbesar'];
         $urutan = (int) substr($kd_brg, 4, 5);
         $urutan++;
-        $awalan = "CH24";
+        $awalan = "CS24";
         $kd_brg = $awalan . sprintf("%05s", $urutan);
 
         session_start();
         $nm_lengkap = $_SESSION['nm_lengkap'];
-
+        
+        if(!empty($_SESSION)){
+          if(isset($_SESSION["message"])){
+              echo "<div class=\"alert alert-success my-3\">".$_SESSION["message"]."</div>";
+              unset($_SESSION["message"]); 
+          }
+      }
         if (isset($_POST["submit"])) {
           $nm_brg = htmlentities(strip_tags(trim($_POST["nm_brg"])));
           $spek_brg = htmlentities(strip_tags(trim($_POST["spek_brg"])));
@@ -48,7 +54,6 @@
           $lok_temu = htmlentities(strip_tags(trim($_POST["lok_temu"])));
           $lok_aman = htmlentities(strip_tags(trim($_POST["lok_aman"])));
           $petugas = htmlentities(strip_tags(trim($_POST["petugas"])));
-          $foto_brg = "";
 
           if (isset($_FILES['foto_brg']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
             $tmp_file = $_FILES['foto_brg']['tmp_name'];
@@ -102,9 +107,9 @@
             $result = mysqli_query($koneksi, $query);
 
             if ($result) {
-              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang\"<b>$kd_brg</b>\" sudah berhasil ditambahkan";
-              $message = urlencode($message);
-              header("Location: temuan_admin.php?message={$message}");
+              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang\"<b>$kd_brg</b>\" berhasil ditambahkan";
+              $_SESSION["message"] = $message;
+              header("Location: temuan_admin.php?");
             } else {
               die("Query Error: " . mysqli_errno($koneksi) . " - " . mysqli_error($koneksi));
             }
@@ -171,13 +176,18 @@
             <input type="submit" name="submit" value="Tambah" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;" onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
         </form>
+        <form action="ubah_barang.php" method="post" class="d-inline-block mb-2">
+        <input type="hidden" name="kd_brg" value="<?php echo $data['kd_brg']; ?>">
+        </form>
       </section>
       <?php
       mysqli_close($koneksi);
       ?>
     </div>
   </div>
-
+  <footer>
+    All Rights Reserved | © CariSini UPNVJ! - 2024
+    </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>
