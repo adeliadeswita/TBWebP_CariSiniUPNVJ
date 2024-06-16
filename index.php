@@ -7,11 +7,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM pengguna WHERE username = '$username' AND pass = '$password'";
     $result = mysqli_query($koneksi, $query);
     if (mysqli_num_rows($result) == 1) {
-        // Set sesi pengguna
+        $row = mysqli_fetch_assoc($result);
         $_SESSION['username'] = $username;
+        $_SESSION['nm_lengkap'] = $row['nm_lengkap'];
 
-        if (strlen($username > 11) !== false) {
-            header("Location: temuan_admin.php"); //Kalo username mengandung admin maka akan dialihkan ke halaman temuan_admin.php
+        if (strlen($username) > 10) {
+            header("Location: temuan_admin.php");
         } else {
             header("Location: temuan_user.php");
         }
