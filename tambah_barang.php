@@ -102,7 +102,7 @@
             $result = mysqli_query($koneksi, $query);
 
             if ($result) {
-              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang\"<b>$kd_brg</b>\" sudah berhasil ditambahkan";
+              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang \"<b>$kd_brg</b>\" sudah berhasil ditambahkan";
               $message = urlencode($message);
               header("Location: temuan_admin.php?message={$message}");
             } else {
