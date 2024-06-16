@@ -40,7 +40,13 @@
 
         session_start();
         $nm_lengkap = $_SESSION['nm_lengkap'];
-
+        
+        if(!empty($_SESSION)){
+          if(isset($_SESSION["message"])){
+              echo "<div class=\"alert alert-success my-3\">".$_SESSION["message"]."</div>";
+              unset($_SESSION["message"]); 
+          }
+      }
         if (isset($_POST["submit"])) {
           $nm_brg = htmlentities(strip_tags(trim($_POST["nm_brg"])));
           $spek_brg = htmlentities(strip_tags(trim($_POST["spek_brg"])));
@@ -101,9 +107,9 @@
             $result = mysqli_query($koneksi, $query);
 
             if ($result) {
-              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang\"<b>$kd_brg</b>\" sudah berhasil ditambahkan";
-              $message = urlencode($message);
-              header("Location: temuan_admin.php?message={$message}");
+              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang\"<b>$kd_brg</b>\" berhasil ditambahkan";
+              $_SESSION["message"] = $message;
+              header("Location: temuan_admin.php?");
             } else {
               die("Query Error: " . mysqli_errno($koneksi) . " - " . mysqli_error($koneksi));
             }
@@ -179,7 +185,9 @@
       ?>
     </div>
   </div>
-
+  <footer>
+    All Rights Reserved | © CariSini UPNVJ! - 2024
+    </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -46,8 +46,13 @@
                 </div>
 
                 <?php
-                if (isset($_GET["message"])) {
-                    echo "<div class=\"alert alert-success my-3\">".$_GET["message"]."</div>";
+                session_start();
+                $nm_lengkap = $_SESSION['nm_lengkap'];
+                if(!empty($_SESSION)){
+                    if(isset($_SESSION["message"])){
+                        echo "<div class=\"alert alert-success my-3\">".$_SESSION["message"]."</div>";
+                        unset($_SESSION["message"]); 
+                    }
                 }
                 ?>
 
@@ -58,7 +63,7 @@
                     $cari = $_GET['cari'];
                     $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%'";
                 } else {
-                    $query = "SELECT * FROM temuan";
+                    $query = "SELECT * FROM temuan ORDER BY kd_brg DESC";
                 }
 
                 $result = mysqli_query($koneksi, $query);
@@ -99,11 +104,7 @@
                         echo "<td>$data[petugas]</td>";
 
                         echo "<td class='text-center'>";
-                        echo "<form action=\"./ubah_barang.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                        echo "<input type=\"submit\" name=\"submit\" value=\"Ubah\" style=\"width:80px; background-color: #65C18C; color: white;\" 
-                              onmouseenter=\"this.style.backgroundColor='#186F65'\" 
-                              onmouseout=\"this.style.backgroundColor='#65C18C'\" class=\"btn btn-info text-white\">";
-                        echo "</form>";
+                        echo '<a href="ubah_barang.php?kode='. $data['kd_brg'].'" class="btn btn-ubah">Ubah</a>';
                         echo "</td>";
 
                         echo "</tr>";
