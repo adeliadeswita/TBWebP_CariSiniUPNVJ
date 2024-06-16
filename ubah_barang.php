@@ -98,7 +98,7 @@ if (isset($_POST["submit"])) {
         $result_update = mysqli_query($koneksi, $query_update);
 
       if($result_update) {
-          $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang\"<b>$kd_brg</b>\" berhasil diubah"; 
+          $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang \"<b>$kd_brg</b>\" berhasil diubah"; 
           $_SESSION["message"] = $message;
           header("Location: temuan_admin.php"); 
       }else {
