@@ -6,7 +6,7 @@ $username = $_SESSION['username'];
 $nm_lengkap = $_SESSION['nm_lengkap'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  // Collect form data
+
   $nm_lengkap = $_POST['nm_lengkap'];
   $username = $_POST['username'];
   $nm_brg = $_POST['nm_brg'];
@@ -15,20 +15,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $tgl_hilang = $_POST['tgl_hilang'];
   $kron_hilang = $_POST['kron_hilang'];
 
-  // File upload handling
   $ktp_ktm = $_FILES['ktp_ktm']['name'];
   $ktp_ktm_tmp = $_FILES['ktp_ktm']['tmp_name'];
   $upload_dir = 'foto/';
   move_uploaded_file($ktp_ktm_tmp, $upload_dir . $ktp_ktm);
 
-  // Validasi nm_brg dan kd_brg
   $query_check = "SELECT * FROM temuan WHERE nm_brg = '$nm_brg' AND kd_brg = '$kd_brg'";
   $result_check = mysqli_query($koneksi, $query_check);
 
   if (mysqli_num_rows($result_check) > 0) {
-    // Jika ada data yang cocok, lakukan INSERT
+    
     $sql = "INSERT INTO pengajuan (nm_lengkap, username, nm_brg, kd_brg, spek_brg_ajuan, tgl_hilang, kron_hilang, ktp_ktm)
-                VALUES ('$nm_lengkap', '$username', '$nm_brg', '$kd_brg', '$spek_brg_ajuan', '$tgl_hilang', '$kron_hilang', '$ktp_ktm')";
+    VALUES ('$nm_lengkap', '$username', '$nm_brg', '$kd_brg', '$spek_brg_ajuan', '$tgl_hilang', '$kron_hilang', '$ktp_ktm')";
 
     if (mysqli_query($koneksi, $sql)) {
       $berhasil = "Data berhasil disimpan !";
@@ -48,29 +46,52 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <head>
   <meta charset="UTF-8">
-  <title>Pengajuan-CariSini UPNVJ</title>
+  <title>Pengajuan - CariSini UPNVJ</title>
+  <link rel="icon" href="logo/logo-tab.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <nav class="nav">
-    <div class="logo">CariSini UPNVJ!</div>
-    <div class="nav-navigasi">
-      <ul>
-        <li><a href="./temuan_user.php">Informasi Temuan</a></li>
-        <li><a href="">Pengajuan</a></li>
-        <li><a href="./histori_user.php">Histori</a></li>
-      </ul>
-    </div>
-  </nav>
-  <div class="bg-light">
-    <div class="container mt-5 border rounded bg-white py-4 px-5 mb-5">
-      <header class="header-title mb-4">
-        <h1 class="form-barang"><b><a style="text-decoration: none;"><span style="color:#186F65">Form</span><span> Pengajuan Verifikasi Barang</span></a></b></h1>
+<nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <img src='logo\logo-title.png' style="width:200px";>
+            <div class="navbar-collapse ms-auto">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./temuan_user.php">Informasi Temuan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./form_pengajuan.php">Pengajuan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./histori_user.php">Histori</a>
+                    </li>
+                </ul>
+                
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user" style="color: #ffffff;"></i>
+                    </button>
+                    <ul class="dropdown-content dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><?php echo $nm_lengkap; ?></li>
+                        <li style="font-size:smaller";><?php echo $username; ?></li>
+                        <li><a class="dropdown-item" href="logout.php">Keluar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+  <div class="flex-container">
+    <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
+      <header class="header-title mb-2">
+        <h1 class="title"><b><span style="color:#186F65">Form</span><span> Pengajuan Verifikasi Barang</span></b></h1>
         <hr>
       </header>
+      
       <section>
         <form action="form_pengajuan.php" method="post" class="form" enctype="multipart/form-data">
           <?php if (isset($error)) {
