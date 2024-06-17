@@ -37,8 +37,8 @@
                            onmouseenter="this.style.backgroundColor='#186F65'"
                            onmouseout="this.style.backgroundColor='#65C18C'">Tambah</a>
                     </div>
-                    <div style="margin-right:-660px;">
-                        <form class="form-inline my-2 my-lg-0 clearfix d-flex">
+                    <div class="clearfix d-flex justify-content-end">
+                        <form class="form-inline my-2 my-lg-0 d-flex">
                             <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Cari" aria-label="cari">
                             <button class="btn btn-outline my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
