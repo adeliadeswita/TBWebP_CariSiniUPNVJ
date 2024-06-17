@@ -79,12 +79,17 @@ nav ul li a {
     color: #65C18C;
     border-color: lightgray;
 }
+.btn-primary {
+    color: white;
+    background-color: red;
+}
 
 .btn:hover {
     color: white;
     background-color: #65C18C;
     border-color: #65C18C;
 }
+
 
 .title {
     font-size: x-large;

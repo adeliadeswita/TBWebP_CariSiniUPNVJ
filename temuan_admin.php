@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informasi Temuan - CariSini UPNVJ</title>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
@@ -33,9 +34,7 @@
             <section>
                 <div class="clearfix d-flex justify-content-between">
                     <div style="margin-left: 10px;">
-                        <a href="tambah_barang.php" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;"
-                           onmouseenter="this.style.backgroundColor='#186F65'"
-                           onmouseout="this.style.backgroundColor='#65C18C'">Tambah</a>
+                        <a href="tambah_barang.php" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;" onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">Tambah</a>
                     </div>
                     <div style="margin-right:-850px;">
                         <form class="form-inline my-2 my-lg-0 clearfix d-flex">
@@ -47,7 +46,7 @@
 
                 <?php
                 if (isset($_GET["message"])) {
-                    echo "<div class=\"alert alert-success my-3\">".$_GET["message"]."</div>";
+                    echo "<div class=\"alert alert-success my-3\">" . $_GET["message"] . "</div>";
                 }
                 ?>
 
@@ -63,8 +62,8 @@
 
                 $result = mysqli_query($koneksi, $query);
 
-                if(!$result){
-                    die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
+                if (!$result) {
+                    die("Query Error:" . mysqli_errno($koneksi) . " -" . mysqli_error($koneksi));
                 }
 
                 if (mysqli_num_rows($result) > 0) {
@@ -84,7 +83,7 @@
                     echo '</thead>';
                     echo '<tbody>';
 
-                    while($data = mysqli_fetch_assoc($result)) {
+                    while ($data = mysqli_fetch_assoc($result)) {
                         $raw_date = strtotime($data["tgl_temu"]);
                         $date = date("d - m - Y", $raw_date);
 
@@ -127,4 +126,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>
