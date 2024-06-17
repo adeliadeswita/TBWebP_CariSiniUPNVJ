@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         h3 {
             margin: 20px;
             text-align: center;
-            font-size:50px;
+            font-size: 50px;
             color: #186F65;
             font-family: 'Poppins';
             font-weight: bold;
@@ -111,7 +111,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="text" placeholder="Masukkan NIM/NIP" name="username" required><br><br>
             <input type="password" placeholder="Masukkan Password" name="password" required>
             <br><br>
-            
+
             <div class="login-btn">
                 <input type="submit" value="Masuk">
             </div>

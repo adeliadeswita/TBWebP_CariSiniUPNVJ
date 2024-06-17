@@ -26,14 +26,14 @@
     <div class="flex-container">
         <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
             <header>
-                <h1 class="title"><span style= "color:#186F65">Verifikasi </span><span>Pengajuan</span></h1>
+                <h1 class="title"><span style="color:#186F65">Verifikasi </span><span>Pengajuan</span></h1>
                 <hr>
             </header>
 
             <section>
                 <?php
                 if (isset($_GET["message"])) {
-                    echo "<div class=\"alert alert-success my3\">".$_GET["message"]."</div>";
+                    echo "<div class=\"alert alert-success my3\">" . $_GET["message"] . "</div>";
                 }
                 ?>
 
@@ -59,11 +59,11 @@
                             $query = "SELECT * FROM pengajuan WHERE status = 'Belum Terverifikasi'";
                             $result = mysqli_query($koneksi, $query);
 
-                            if(!$result){
-                                die ("Query Error:".mysqli_errno($koneksi)." -".mysqli_error($koneksi));
+                            if (!$result) {
+                                die("Query Error:" . mysqli_errno($koneksi) . " -" . mysqli_error($koneksi));
                             }
 
-                            while($data = mysqli_fetch_assoc($result)) {
+                            while ($data = mysqli_fetch_assoc($result)) {
                                 $raw_date = strtotime($data["tgl_hilang"]);
                                 $date = date("d - m - Y", $raw_date);
 
@@ -107,4 +107,5 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
+
 </html>
