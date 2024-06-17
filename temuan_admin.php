@@ -31,16 +31,16 @@
             </header>
 
             <section>
-                <div class="clearfix d-flex justify-content-between">
-                    <div style="margin-left: 10px;">
-                        <a href="tambah_barang.php" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;"
+                <div class="d-flex flex-wrap justify-content-between align-items-center">
+                    <div class="mb-2">
+                        <a href="tambah_barang.php" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
                            onmouseenter="this.style.backgroundColor='#186F65'"
                            onmouseout="this.style.backgroundColor='#65C18C'">Tambah</a>
                     </div>
-                    <div class="clearfix d-flex justify-content-end">
-                        <form class="form-inline my-2 my-lg-0 d-flex">
-                            <input class="form-control mr-sm-2" type="text" name="cari" placeholder="Cari" aria-label="cari">
-                            <button class="btn btn-outline my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <div class="mb-2">
+                        <form class="form-inline d-flex">
+                            <input class="form-control mr-2" type="text" name="cari" placeholder="Cari" aria-label="cari">
+                            <button class="btn btn-outline-secondary" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
                 </div>
