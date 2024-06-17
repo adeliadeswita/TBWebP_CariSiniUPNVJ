@@ -18,6 +18,7 @@ body {
     font-family: 'Poppins';
 }
 
+
 .flex-container {
     flex: 1;
     display: flex;
@@ -25,22 +26,13 @@ body {
     margin-top: 70px;
 }
 
-.logo {
-    font-family: 'Poppins';
-    font-size: x-large;
-    font-weight: bold;
-    color: white;
-    padding: 0px 0px 0px 110px;
-}
-
-nav {
+.navbar {
     display: flex;
     font-size: medium;
     background-color: #186F65;
-    justify-content: space-between;
     align-items: center;
     position: fixed;
-    padding: 10px 80px 10px 80px;
+    padding: 10px 80px;
     top: 0;
     left: 0;
     right: 0;
@@ -48,47 +40,82 @@ nav {
     text-decoration: none;
 }
 
-nav ul {
+.navbar .navbar-nav {
     font-weight: bold;
     list-style-type: none;
     margin: 0;
-    padding: 8px;
+    padding: 0;
     overflow: hidden;
+    margin-left: auto;
 }
 
-nav ul li {
+.navbar .nav-item {
     font-weight: bold;
     float: left;
+    padding-right: 30px;
 }
 
-nav ul li a {
+.navbar .nav-link {
     font-weight: bold;
-    padding-right: 30px;
-    padding-left: 30px;
     color: white;
     text-decoration: none;
 }
 
-.nav-navigasi ul li a:hover {
+.navbar .nav-link:hover {
+    color: #65C18C;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover button {
+    background-color: #186F65;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
     font-weight: bold;
-    padding: 30px;
-    color: #65C18C;
+    right: 0;
+    padding: 12px 16px;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+    border: none;
 }
 
-.btn {
-    color: #65C18C;
-    border-color: lightgray;
-}
-
-.btn:hover {
+.dropdown-content a {
     color: white;
     background-color: #65C18C;
-    border-color: #65C18C;
+    padding: 5px 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    display: block;
+    border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+    color: white;
+    background-color: #186F65;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown button {
+    border: none;
+    background: transparent;
+    padding: 0;
 }
 
 .title {
     font-size: x-large;
     font-weight: bold;
+    margin-top: 10px;
 }
 
 .kolom {
@@ -102,19 +129,31 @@ nav ul li a {
     text-align: center;
 }
 
+.btn {
+    color: #65C18C;
+    border-color: lightgray;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #65C18C;
+    border-color: #65C18C;
+}
+
+.btn-ubah {
+    width: 80px;
+    background-color: #65C18C;
+    color: white;
+}
+
+.btn-ubah:hover {
+    background-color: #186F65;
+}
+
 footer {
     color: #186F65;
     text-align: center;
     padding: 10px 0;
     font-size: small;
     margin-top: auto;
-}
-
-.btn-ubah {
-    width:80px; 
-    background-color: #65C18C;
-    color: white;
-}
-.btn-ubah:hover {
-    background-color: #186F65;
 }

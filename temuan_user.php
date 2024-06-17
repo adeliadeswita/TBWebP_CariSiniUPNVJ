@@ -1,14 +1,6 @@
 <?php
 session_start();
 include 'koneksi.php';
-
-// Periksa apakah pengguna sudah login
-if (!isset($_SESSION['username']) || !isset($_SESSION['nm_lengkap'])) {
-    header("Location: index.php"); // kembali ke halaman login apabila belum login
-    exit;
-}
-
-// Ambil data dari sesi
 $username = $_SESSION['username'];
 $nm_lengkap = $_SESSION['nm_lengkap'];
 ?>
@@ -20,6 +12,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informasi Temuan - CariSini UPNVJ</title>
+    <link rel="icon" href="logo/logo-tab.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
@@ -28,14 +21,33 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
 </head>
 
 <body>
-    <nav class="nav">
-        <div class="logo">CariSini UPNVJ</div>
-        <div class="nav-navigasi">
-            <ul>
-                <li><a href="./temuan_user.php">Informasi Temuan</a></li>
-                <li><a href="./form_pengajuan.php">Pengajuan</a></li>
-                <li><a href="./histori_user.php">Histori</a></li>
-            </ul>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <img src='logo\logo-title.png' style="width:200px";>
+            <div class="navbar-collapse ms-auto">
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./temuan_user.php">Informasi Temuan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./form_pengajuan.php">Pengajuan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./histori_user.php">Histori</a>
+                    </li>
+                </ul>
+                
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-user" style="color: #ffffff;"></i>
+                    </button>
+                    <ul class="dropdown-content dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><?php echo $nm_lengkap; ?></li>
+                        <li style="font-size:smaller";><?php echo $username; ?></li>
+                        <li><a class="dropdown-item" href="logout.php">Keluar</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
 
@@ -55,8 +67,6 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                 </div>
 
                 <?php
-                include("koneksi.php");
-
                 if (isset($_GET['cari'])) {
                     $cari = $_GET['cari'];
                     $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%'";
