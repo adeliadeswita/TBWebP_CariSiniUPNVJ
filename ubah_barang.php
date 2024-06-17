@@ -19,6 +19,7 @@
           </ul>
       </div>
   </nav>
+
   <div class="flex-container"> 
     <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5"> 
     <header class="header-title mb-2"> 
@@ -62,9 +63,9 @@ if (isset($_POST["submit"])) {
           }
           
             $query_delete_foto_lama = "SELECT foto_brg FROM temuan WHERE kd_brg='$kd_brg'";
-            $result_delete_foto_lama = mysqli_query($koneksi, $query_delete_old_photo);
+            $result_delete_foto_lama = mysqli_query($koneksi, $query_delete_foto_lama);
             if ($result_delete_foto_lama) {
-                $old_photo = mysqli_fetch_assoc($result_delete_foto_lama)['foto_brg'];
+                $foto_lama = mysqli_fetch_assoc($result_delete_foto_lama)['foto_brg'];
                 unlink("foto/" . $foto_lama); // Hapus file lama dari folder
             }
         
