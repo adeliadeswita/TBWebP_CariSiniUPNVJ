@@ -56,7 +56,14 @@ $nm_lengkap = $_SESSION['nm_admin'];
                 <h1 class="title"><span style= "color:#186F65">Verifikasi </span><span>Pengajuan</span></h1>
                 <hr>
             </header>
-
+            <?php
+                if(!empty($_SESSION)){
+                    if(isset($_SESSION["message"])){
+                        echo "<div class=\"alert alert-success my-3\">".$_SESSION["message"]."</div>";
+                        unset($_SESSION["message"]); 
+                    }
+                }
+                ?>
             <section>
                 <?php
                 if (isset($_GET["message"])) {
