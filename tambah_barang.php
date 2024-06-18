@@ -57,13 +57,6 @@ $nm_lengkap = $_SESSION['nm_admin'];
 
       <section>
         <?php
-        $query = mysqli_query($koneksi, "SELECT max(kd_brg) as kodeTerbesar FROM temuan");
-        $data = mysqli_fetch_array($query);
-        $kd_brg = $data['kodeTerbesar'];
-        $urutan = (int) substr($kd_brg, 4, 5);
-        $urutan++;
-        $awalan = "CS24";
-        $kd_brg = $awalan . sprintf("%05s", $urutan);
         
         if(!empty($_SESSION)){
           if(isset($_SESSION["message"])){
@@ -72,6 +65,13 @@ $nm_lengkap = $_SESSION['nm_admin'];
           }
       }
         if (isset($_POST["submit"])) {
+          $query = mysqli_query($koneksi, "SELECT max(kd_brg) as kodeTerbesar FROM temuan");
+          $data = mysqli_fetch_array($query);
+          $kd_brg = $data['kodeTerbesar'];
+          $urutan = (int) substr($kd_brg, 4, 5);
+          $urutan++;
+          $awalan = "CS24";
+          $kd_brg = $awalan . sprintf("%05s", $urutan);
           $nm_brg = htmlentities(strip_tags(trim($_POST["nm_brg"])));
           $spek_brg = htmlentities(strip_tags(trim($_POST["spek_brg"])));
           $tgl_temu = htmlentities(strip_tags(trim($_POST["tgl_temu"])));
@@ -151,7 +151,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
         <form action="tambah_barang.php" method="post" class="form" enctype="multipart/form-data">
           <div class="mb-3">
             <label for="kd_brg" class="form-label">Kode Barang</label>
-            <input type="text" name="kd_brg" id="kd_brg" class="form-control" value="<?php echo $kd_brg; ?>" readonly>
+            <input type="text" class="form-control" value="Auto Generated" disabled>
           </div>
           <div class="mb-3">
             <label for="nm_brg" class="form-label">Nama Barang</label>
