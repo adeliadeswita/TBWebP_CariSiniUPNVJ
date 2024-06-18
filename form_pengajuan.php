@@ -136,7 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           }
           ?>
           <div class="mb-3">
-            <input type="hidden" name="kd_ajuan" id="kd_ajuan" class="form-control" value="<?php echo $kd_ajuan; ?>">  
+            <input type="hidden" name="kd_ajuan" id="kd_ajuan" class="form-control" value="Auto Generated">  
           </div>
           <div class="mb-3">
             <label for="nm_lengkap" class="form-label">Nama Lengkap</label>
@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
           <div>
             <label for="ktp_ktm" class="form-label">KTP/KTM</label>
-            <input type="file" name="ktp_ktm" id="ktp_ktm" class="form-control" value="">
+            <input type="file" name="ktp_ktm" id="ktp_ktm" class="form-control" value="" accept=".jpg, .jpeg, .png">
           </div><br>
           <div class="mb-3">
             <label for="kd_brg" class="form-label">Kode Barang</label>
@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="reset" name="reset" value="Reset" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
             onmouseenter="this.style.backgroundColor='#186F65'"
             onmouseout="this.style.backgroundColor='#65C18C'">
-            <input type="kirim" name="kirim" value="Kirim" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
+            <input type="submit" name="kirim" value="Kirim" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
             onmouseenter="this.style.backgroundColor='#186F65'"
             onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
