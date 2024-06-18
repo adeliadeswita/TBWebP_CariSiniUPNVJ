@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("koneksi.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verifikasi"])) {
@@ -8,13 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["verifikasi"])) {
 
     $result = mysqli_query($koneksi, $query);
 
-
-    if ($result) {
-        header("Location: verifikasi.php?message=Pengajuan dengan Kode Pengajuan <b>$kd_ajuan</b> berhasil diverifikasi");
-    } else {
-        header("Location: verifikasi.php?message=Verifikasi gagal: " . mysqli_error($koneksi));
+    if($result) {
+        $message = "Pengajuan dengan Kode Pengajuan <b>$kd_ajuan</b> berhasil diverifikasi"; 
+        $_SESSION["message"] = $message;
+        header("Location: verifikasi.php"); 
+    }else {
+        die ("Query Error: ".mysqli_errno($koneksi)." - "
+        .mysqli_error($koneksi)); 
     }
 }
-
-mysqli_close($koneksi);
 ?>
