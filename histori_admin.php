@@ -82,7 +82,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 <th scope="col">Kode Barang</th>
                                 <th scope="col">Nama Barang</th>
                                 <th scope="col">Tanggal Hilang</th>
-                                <th scope="col">Spesifikasi</th>
+                                <th scope="col">Deskripsi Barang</th>
                                 <th scope="col">Kronologi Kehilangan</th>
                                 <th scope="col">Status</th>
                             </tr>
