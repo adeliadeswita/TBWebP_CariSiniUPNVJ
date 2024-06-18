@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="nm_lengkap" id="nm_lengkap" class="form-control" value="<?php echo $nm_lengkap; ?>" readonly>
           </div>
           <div class="mb-3">
-            <label for="username" class="form-label">NIM/NIP/NIDN</label>
+            <label for="username" class="form-label">NIM/NIP</label>
             <input type="text" name="username" id="username" class="form-control" value="<?php echo $username; ?>" readonly>
           </div>
           <div>
@@ -159,7 +159,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="nm_brg_ajuan" id="nm_brg_ajuan" class="form-control" value="">
           </div>
           <div class="mb-3">
-            <label for="spek_brg_ajuan" class="form-label">Spesifikasi Barang</label>
+            <label for="spek_brg_ajuan" class="form-label">Deskripsi Barang</label>
             <input type="text" name="spek_brg_ajuan" id="spek_brg_ajuan" class="form-control" value="">
           </div>
           <div class="mb-3">
@@ -175,7 +175,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="reset" name="reset" value="Reset" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
             onmouseenter="this.style.backgroundColor='#186F65'"
             onmouseout="this.style.backgroundColor='#65C18C'">
-            <input type="submit" name="submit" value="Submit" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
+            <input type="kirim" name="kirim" value="Kirim" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
             onmouseenter="this.style.backgroundColor='#186F65'"
             onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
@@ -188,7 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     function resetForm() {
       const form = document.getElementById('pengajuanForm');
       Array.from(form.elements).forEach(element => {
-        if (!element.readOnly && element.type !== 'submit' && element.type !== 'button') {
+        if (!element.readOnly && element.type !== 'kirim' && element.type !== 'button') {
           element.value = '';
           if (element.type === 'file') {
             element.value = null;

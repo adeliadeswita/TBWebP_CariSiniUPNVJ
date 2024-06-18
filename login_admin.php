@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             ?>
             <input type="text" placeholder="Masukkan NIP" name="id_admin" required><br><br>
-            <input type="password" placeholder="Masukkan Password" name="pass_admin" required>
+            <input type="password" placeholder="Masukkan Kata Sandi" name="pass_admin" required>
             <br><br>
             
             <div class="login-btn">

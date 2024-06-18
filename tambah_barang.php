@@ -158,7 +158,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
             <input type="text" name="nm_brg" id="nm_brg" class="form-control" value="<?php echo (isset($nm_brg)) ? $nm_brg : ""; ?>">
           </div>
           <div class="mb-3">
-            <label for="spek_brg" class="form-label">Spesifikasi Barang</label>
+            <label for="spek_brg" class="form-label">Deskripsi Barang</label>
             <input type="text" name="spek_brg" id="spek_brg" class="form-control" value="<?php echo (isset($spek_brg)) ? $spek_brg : ""; ?>">
           </div>
           <div class="mb-3">

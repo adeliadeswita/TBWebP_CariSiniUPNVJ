@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM pengguna WHERE username = '$username' AND pass = '$password'";
     $result = mysqli_query($koneksi, $query);
 
-    if (!preg_match("/^[0-9]{10}$/",$username)) {
+    if (!preg_match("/^[0-9]{10}(?:[0-9]{8})?$/",$username)) {
         $error = "Username harus berupa angka 10 atau 18 digit";
     } else {
         $query = "SELECT * FROM pengguna WHERE username = '$username' AND pass = '$password'";
@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p style='color:red;'>$error</p>";
             }
             ?>
-            <input type="text" placeholder="Masukkan NIM/NIP/NIDN" name="username" required><br><br>
-            <input type="password" placeholder="Masukkan Password" name="password" required>
+            <input type="text" placeholder="Masukkan NIM/NIP" name="username" required><br><br>
+            <input type="password" placeholder="Masukkan Kata Sandi" name="password" required>
             <br><br>
             
             <div class="login-btn">
