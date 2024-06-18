@@ -31,7 +31,10 @@ $nm_lengkap = $_SESSION['nm_admin'];
                         <a class="nav-link" href="./verifikasi.php">Verifikasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./histori_admin.php">Histori</a>
+                        <a class="nav-link" href="./histori_admin.php">Pengambilan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./all_histori.php">Histori</a>
                     </li>
                 </ul>
                 
