@@ -4,9 +4,15 @@ include 'koneksi.php';
 
 $username = $_SESSION['username'];
 $nm_lengkap = $_SESSION['nm_lengkap'];
+$query_check = mysqli_query($koneksi, "SELECT max(kd_ajuan) as kodeTerakhir FROM pengajuan");
+$data = mysqli_fetch_array($query_check);
+$kd_ajuan = $data['kodeTerakhir'];
+$urutan = (int) substr($kd_ajuan, 4, 5);
+$urutan++;
+$awalan = "PJ24";
+$kd_ajuan = $awalan . sprintf("%05s", $urutan);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
   $nm_lengkap = $_POST['nm_lengkap'];
   $username = $_POST['username'];
   $nm_brg_ajuan = $_POST['nm_brg_ajuan'];
@@ -53,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result_check = mysqli_query($koneksi, $query_check);
 
     if (mysqli_num_rows($result_check) > 0) {
-      $sql = "INSERT INTO pengajuan (nm_lengkap, username, nm_brg_ajuan, kd_brg, spek_brg_ajuan, tgl_hilang, kron_hilang, ktp_ktm)
-      VALUES ('$nm_lengkap', '$username', '$nm_brg_ajuan', '$kd_brg', '$spek_brg_ajuan', '$tgl_hilang', '$kron_hilang', '$ktp_ktm')";
+      $sql = "INSERT INTO pengajuan (kd_ajuan, nm_lengkap, username, nm_brg_ajuan, kd_brg, spek_brg_ajuan, tgl_hilang, kron_hilang, ktp_ktm)
+      VALUES ('$kd_ajuan','$nm_lengkap', '$username', '$nm_brg_ajuan', '$kd_brg', '$spek_brg_ajuan', '$tgl_hilang', '$kron_hilang', '$ktp_ktm')";
 
       if (mysqli_query($koneksi, $sql)) {
         $berhasil = "Data berhasil disimpan!";
@@ -117,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <div class="flex-container">
     <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
       <header class="header-title mb-2">
-        <h1 class="title"><b><span style="color:#186F65">Form</span><span> Pengajuan Verifikasi Barang</span></b></h1>
+        <h1 class="title"><b><span style="color:#186F65">Form Pengajuan</span><span> Barang Hilang</span></b></h1>
         <hr>
       </header>
       
@@ -129,6 +135,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             echo "<div class='alert alert-success'>$berhasil</div>";
           }
           ?>
+          <div class="mb-3">
+            <input type="hidden" name="kd_ajuan" id="kd_ajuan" class="form-control" value="<?php echo $kd_ajuan; ?>">  
+          </div>
           <div class="mb-3">
             <label for="nm_lengkap" class="form-label">Nama Lengkap</label>
             <input type="text" name="nm_lengkap" id="nm_lengkap" class="form-control" value="<?php echo $nm_lengkap; ?>" readonly>

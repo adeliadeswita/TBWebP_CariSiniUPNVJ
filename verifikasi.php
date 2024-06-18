@@ -68,6 +68,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                     <table class="table table-striped">
                         <thead class="kolom">
                             <tr>
+                                <th scope="col">Kode Pengajuan</th>
                                 <th scope="col">NIM/NIP</th>
                                 <th scope="col">Nama Lengkap</th>
                                 <th scope="col">KTP/KTM</th>
@@ -95,6 +96,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 $date = date("d - m - Y", $raw_date);
 
                                 echo "<tr>";
+                                echo "<td>$data[kd_ajuan]</td>";
                                 echo "<td>$data[username]</td>";
                                 echo "<td>$data[nm_lengkap]</td>";
                                 echo "<td><img src='ktpktm/" . $data['ktp_ktm'] . "' alt='image' style='width:80px;s'></td>";
@@ -106,16 +108,19 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "<td>$data[status]</td>";
                                 echo "<td class=\"text-center\">";
                                 echo "<form action=\"verifikasi_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                                echo "<input type=\"hidden\" name=\"username\" value=\"$data[username]\">";
-
-                                if ($data['status'] == 'Terverifikasi') {
-                                    echo "<input type=\"button\" value=\"Verifikasi\" class=\"btn btn-success\">";
-                                } else {
-                                    echo "<input type=\"submit\" name=\"verifikasi\" value=\"Verifikasi\" class=\"btn btn-info text-white\"
-                                        style=\"width:100px; background-color: #65C18C; color: white;\" 
-                                        onmouseenter=\"this.style.backgroundColor='#186F65'\" 
-                                        onmouseout=\"this.style.backgroundColor='#65C18C'\">";
-                                }
+                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
+                                echo "<input type=\"submit\" name=\"verifikasi\" value=\"Verifikasi\" class=\"btn btn-info text-white\"
+                                    style=\"width:100px; background-color: #65C18C; color: white;\" 
+                                    onmouseenter=\"this.style.backgroundColor='#186F65'\" 
+                                    onmouseout=\"this.style.backgroundColor='#65C18C'\">";
+                                
+                                echo "</form>";
+                                echo "<form action=\"tolak_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
+                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
+                                echo "<input type=\"submit\" name=\"Tolak\" value=\"Tolak\" class=\"btn btn-info text-white\"
+                                style=\"width:100px; background-color: #d15e5e; color: white;\" 
+                                onmouseenter=\"this.style.backgroundColor='#a81b1b'\" 
+                                onmouseout=\"this.style.backgroundColor='#d15e5e'\">";
                                 echo "</form>";
                                 echo "</td>";
                                 echo "</tr>";

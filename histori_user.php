@@ -15,12 +15,6 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .centered-table th, .centered-table td {
-            text-align: center;
-            vertical-align: middle;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg">
@@ -56,13 +50,13 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
   <div class="flex-container">
         <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
             <header style="margin-bottom:-30px;">
-                <h1 class="title"><a style="text-decoration: none;"><span style= "color:#186F65">Histori </span><span>Verifikasi Barang</span></a></h1>
+                <h1 class="title"><a style="text-decoration: none;"><span style= "color:#186F65">Histori </span><span>Pengajuan</span></a></h1>
                 <hr>
             </header>
             <section>
         <?php
         $query = "
-            SELECT pengajuan.kd_brg, pengajuan.nm_brg_ajuan, pengajuan.status, temuan.petugas
+            SELECT pengajuan.kd_ajuan, pengajuan.kd_brg, pengajuan.nm_brg_ajuan, pengajuan.status, temuan.petugas
             FROM pengajuan
             LEFT JOIN temuan ON pengajuan.kd_brg = temuan.kd_brg
             WHERE pengajuan.username = '$username'
@@ -76,9 +70,10 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
         ?>
 
         <div class="table-responsive">
-            <table class="table table-striped mt-4 centered-table">
+             <table class="table table-striped mt-4">
                 <thead>
                     <tr class="kolom">
+                        <th scope="col">Kode Pengajuan</th>
                         <th scope="col">Kode Barang</th>
                         <th scope="col">Nama Barang</th>
                         <th scope="col">Status</th>
@@ -88,7 +83,8 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                 <tbody>
                     <?php
                     while ($data = mysqli_fetch_assoc($result)) {
-                        echo "<tr>";
+                        echo "<tr class='isi'>";
+                        echo "<td>{$data['kd_ajuan']}</td>";
                         echo "<td>{$data['kd_brg']}</td>";
                         echo "<td>{$data['nm_brg_ajuan']}</td>";
                         echo "<td>{$data['status']}</td>";
