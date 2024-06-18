@@ -67,6 +67,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                         <thead>
                             <tr class="kolom">
                                 <th scope="col">Kode Pengajuan</th>
+                                <th scope="col">Nama Lengkap</th>
                                 <th scope="col">Kode Barang</th>
                                 <th scope="col">Nama Barang</th>
                                 <th scope="col">Deskripsi Barang</th>
@@ -88,6 +89,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
 
                                 echo "<tr class='isi'>";
                                 echo "<td>$data[kd_ajuan]</td>";
+                                echo "<td>$data[nm_lengkap]</td>";
                                 echo "<td>$data[kd_brg]</td>";
                                 echo "<td>$data[nm_brg_ajuan]</td>";
                                 echo "<td>$data[spek_brg_ajuan]</td>";
