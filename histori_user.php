@@ -65,6 +65,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
             SELECT pengajuan.kd_brg, pengajuan.nm_brg_ajuan, pengajuan.status, temuan.petugas
             FROM pengajuan
             LEFT JOIN temuan ON pengajuan.kd_brg = temuan.kd_brg
+            WHERE pengajuan.username = '$username'
         ";
         
         $result = mysqli_query($koneksi, $query);

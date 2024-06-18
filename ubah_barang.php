@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'koneksi.php';
-$username = $_SESSION['username'];
-$nm_lengkap = $_SESSION['nm_lengkap'];
+$username = $_SESSION['id_admin'];
+$nm_lengkap = $_SESSION['nm_admin'];
 ?>
 
 <!DOCTYPE html> 
@@ -163,11 +163,11 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
         </div>
         <div class="mb-3"> 
             <label for="nm_brg" class="form-label">Nama Barang</label> 
-            <input type="text" name="nm_brg" id="nm_brg" class="form-control" value="<?php echo isset($nm_brg) ? $nm_brg : ''; ?>"> 
+            <input type="text" name="nm_brg" id="nm_brg" class="form-control" value="<?php echo isset($nm_brg) ? $nm_brg : ''; ?>" required> 
         </div> 
         <div class="mb-3"> 
             <label for="spek_brg" class="form-label">Spesifikasi Barang</label> 
-            <input type="text" name="spek_brg" id="spek_brg" class="form-control" value="<?php echo isset($spek_brg) ? $spek_brg : ''; ?>"> 
+            <input type="text" name="spek_brg" id="spek_brg" class="form-control" value="<?php echo isset($spek_brg) ? $spek_brg : ''; ?>" required> 
         </div>
         <div class="mb-3">
           <label for="foto_brg" class="form-label">Foto Barang</label>
@@ -177,17 +177,18 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
               <br><br>
           <?php endif; ?>
           <input type="file" name="foto_brg" id="foto_brg" class="" accept=".jpg, .jpeg, .png" value="Ubah">
+          <br><br>
           <div class="mb-3"> 
             <label for="tgl_temu" class="form-label">Tanggal Penemuan</label> 
-            <input type="date" name="tgl_temu" id="tgl_temu" class="form-control" value="<?php echo isset($tgl_temu) ? $tgl_temu : ''; ?>"> 
+            <input type="date" name="tgl_temu" id="tgl_temu" class="form-control" value="<?php echo isset($tgl_temu) ? $tgl_temu : ''; ?>" required> 
         </div>
         <div class="mb-3"> 
           <label for="lok_temu" class="form-label">Lokasi Penemuan</label> 
-          <input type="text" name="lok_temu" id="lok_temu" class="form-control" value="<?php echo (isset($lok_temu)) ? $lok_temu : ""; ?>"> 
+          <input type="text" name="lok_temu" id="lok_temu" class="form-control" value="<?php echo (isset($lok_temu)) ? $lok_temu : ""; ?>" required> 
         </div>
         <div class="mb-3"> 
         <label for="lok_aman" class="form-label">Lokasi Pengamanan</label> 
-        <select name="lok_aman" id="lok_aman" class="form-select">
+        <select name="lok_aman" id="lok_aman" class="form-select" required>
         <option value="">Pilih Lokasi</option> 
       </div> 
       <?php 
@@ -195,7 +196,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
           foreach($lokasi_aman as $lokasi) {
               if (isset($lok_aman) && $lok_aman === $lokasi) { echo "<option value=\"$lokasi\"selected>$lokasi</option>";
               } else {
-                  echo "<option value=\"$lokasi\">$lokasi</option>";
+                  echo "<option value=\"$lokasi\">$lokasi</option>" ;
               }
           }
       ?>

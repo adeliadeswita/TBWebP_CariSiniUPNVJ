@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $nm_lengkap = $_POST['nm_lengkap'];
   $username = $_POST['username'];
-  $nm_brg = $_POST['nm_brg'];
+  $nm_brg_ajuan = $_POST['nm_brg_ajuan'];
   $kd_brg = $_POST['kd_brg'];
   $spek_brg_ajuan = $_POST['spek_brg_ajuan'];
   $tgl_hilang = $_POST['tgl_hilang'];
@@ -17,24 +17,53 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $ktp_ktm = $_FILES['ktp_ktm']['name'];
   $ktp_ktm_tmp = $_FILES['ktp_ktm']['tmp_name'];
-  $upload_dir = 'foto/';
-  move_uploaded_file($ktp_ktm_tmp, $upload_dir . $ktp_ktm);
+  $upload_dir = 'ktpktm/';
+  $error = "";
 
-  $query_check = "SELECT * FROM temuan WHERE nm_brg = '$nm_brg' AND kd_brg = '$kd_brg'";
-  $result_check = mysqli_query($koneksi, $query_check);
+  if (!isset($_FILES['ktp_ktm']) || $_FILES['ktp_ktm']['error'] != UPLOAD_ERR_OK) {
+    $error .= "<li>KTP/KTM harus diupload</li>";
+  }
+  if (empty($kd_brg)) {
+    $error .= "<li>Kode barang harus diisi</li>";
+  }
+  if (empty($nm_brg_ajuan)) {
+    $error .= "<li>Nama barang harus diisi</li>";
+  }
+  if (empty($spek_brg_ajuan)) {
+    $error .= "<li>Spesifikasi barang harus diisi</li>";
+  }
+  if (empty($tgl_hilang)) {
+    $error .= "<li>Tanggal kehilangan harus diisi</li>";
+  }
+  if (empty($kron_hilang)) {
+    $error .= "<li>Kronologi hilang harus diisi</li>";
+  }
 
-  if (mysqli_num_rows($result_check) > 0) {
-    
-    $sql = "INSERT INTO pengajuan (nm_lengkap, username, nm_brg, kd_brg, spek_brg_ajuan, tgl_hilang, kron_hilang, ktp_ktm)
-    VALUES ('$nm_lengkap', '$username', '$nm_brg', '$kd_brg', '$spek_brg_ajuan', '$tgl_hilang', '$kron_hilang', '$ktp_ktm')";
+  if ($error === "") {
+    move_uploaded_file($ktp_ktm_tmp, $upload_dir . $ktp_ktm);
 
-    if (mysqli_query($koneksi, $sql)) {
-      $berhasil = "Data berhasil disimpan !";
+    $ktp_ktm = mysqli_real_escape_string($koneksi, $ktp_ktm);
+    $kd_brg = mysqli_real_escape_string($koneksi, $kd_brg);
+    $nm_brg_ajuan = mysqli_real_escape_string($koneksi, $nm_brg_ajuan);
+    $tgl_hilang = mysqli_real_escape_string($koneksi, $tgl_hilang);
+    $spek_brg_ajuan = mysqli_real_escape_string($koneksi, $spek_brg_ajuan);
+    $kron_hilang = mysqli_real_escape_string($koneksi, $kron_hilang);
+
+    $query_check = "SELECT * FROM temuan WHERE nm_brg = '$nm_brg_ajuan' AND kd_brg = '$kd_brg'";
+    $result_check = mysqli_query($koneksi, $query_check);
+
+    if (mysqli_num_rows($result_check) > 0) {
+      $sql = "INSERT INTO pengajuan (nm_lengkap, username, nm_brg_ajuan, kd_brg, spek_brg_ajuan, tgl_hilang, kron_hilang, ktp_ktm)
+      VALUES ('$nm_lengkap', '$username', '$nm_brg_ajuan', '$kd_brg', '$spek_brg_ajuan', '$tgl_hilang', '$kron_hilang', '$ktp_ktm')";
+
+      if (mysqli_query($koneksi, $sql)) {
+        $berhasil = "Data berhasil disimpan!";
+      } else {
+        $error = "Error: " . mysqli_error($koneksi);
+      }
     } else {
-      echo "<script>alert('Error: " . mysqli_error($koneksi) . "');</script>";
+      $error = "Nama barang atau kode barang tidak valid atau tidak ditemukan.";
     }
-  } else {
-    $error = "Nama barang atau kode barang tidak valid atau tidak ditemukan.";
   }
 
   mysqli_close($koneksi);
@@ -94,10 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       
       <section>
         <form action="form_pengajuan.php" method="post" class="form" enctype="multipart/form-data">
-          <?php if (isset($error)) {
-            echo "<p style='color:red;'>$error</p>";
+          <?php if (!empty($error)) {
+            echo "<div class='alert alert-danger'><ul>$error</ul></div>";
           } elseif (isset($berhasil)) {
-            echo "<p style='color:green;'>$berhasil</p>";
+            echo "<div class='alert alert-success'>$berhasil</div>";
           }
           ?>
           <div class="mb-3">
@@ -105,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="nm_lengkap" id="nm_lengkap" class="form-control" value="<?php echo $nm_lengkap; ?>" readonly>
           </div>
           <div class="mb-3">
-            <label for="username" class="form-label">NIM/NIP</label>
+            <label for="username" class="form-label">NIM/NIP/NIDN</label>
             <input type="text" name="username" id="username" class="form-control" value="<?php echo $username; ?>" readonly>
           </div>
           <div>
@@ -113,12 +142,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="file" name="ktp_ktm" id="ktp_ktm" class="form-control" value="">
           </div><br>
           <div class="mb-3">
-            <label for="nm_brg" class="form-label">Nama Barang</label>
-            <input type="text" name="nm_brg" id="nm_brg" class="form-control" value="">
-          </div>
-          <div class="mb-3">
             <label for="kd_brg" class="form-label">Kode Barang</label>
             <input type="text" name="kd_brg" id="kd_brg" class="form-control" value="" placeholder="Contoh : CS24XXXXX">
+          </div>
+          <div class="mb-3">
+            <label for="nm_brg_ajuan" class="form-label">Nama Barang</label>
+            <input type="text" name="nm_brg_ajuan" id="nm_brg_ajuan" class="form-control" value="">
           </div>
           <div class="mb-3">
             <label for="spek_brg_ajuan" class="form-label">Spesifikasi Barang</label>
@@ -128,16 +157,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="tgl_hilang" class="form-label">Tanggal Hilang</label>
             <input type="date" name="tgl_hilang" id="tgl_hilang" class="form-control" value="">
           </div>
-          <br>
           <div class="mb-3">
             <label for="kron_hilang" class="form-label">Kronologi Kehilangan</label>
             <input type="text" name="kron_hilang" id="kron_hilang" class="form-control" value="">
           </div>
           <br>
-          <br>
           <div class="mb-3">
-            <input type="reset" name="reset" value="Reset" class="btn">
-            <input type="submit" name="submit" value="Submit" class="btn">
+            <input type="reset" name="reset" value="Reset" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
+            onmouseenter="this.style.backgroundColor='#186F65'"
+            onmouseout="this.style.backgroundColor='#65C18C'">
+            <input type="submit" name="submit" value="Submit" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
+            onmouseenter="this.style.backgroundColor='#186F65'"
+            onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
         </form>
       </section>

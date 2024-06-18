@@ -13,7 +13,6 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informasi Temuan - CariSini UPNVJ</title>
     <link rel="icon" href="logo/logo-tab.png">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
@@ -69,9 +68,9 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                 <?php
                 if (isset($_GET['cari'])) {
                     $cari = $_GET['cari'];
-                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%'";
+                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%' AND status = 'Belum Terverifikasi'";
                 } else {
-                    $query = "SELECT * FROM temuan";
+                    $query = "SELECT * FROM temuan WHERE status = 'Belum Terverifikasi' ORDER BY kd_brg DESC";
                 }
 
                 $result = mysqli_query($koneksi, $query);
@@ -105,7 +104,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                         echo "<td>$data[kd_brg]</td>";
                         echo "<td>$data[nm_brg]</td>";
                         echo "<td>$data[spek_brg]</td>";
-                        echo "<td><img src='foto/" . $data['foto_brg'] . "' alt='image' style='width:80px; height:80px;'></td>";
+                        echo "<td><img src='foto/" . $data['foto_brg'] . "' alt='image' style='width:80px;'></td>";
                         echo "<td>$date</td>";
                         echo "<td>$data[lok_temu]</td>";
                         echo "<td>$data[lok_aman]</td>";
