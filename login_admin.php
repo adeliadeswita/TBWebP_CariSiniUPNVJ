@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM adm WHERE id_admin = '$username' AND pass_admin = '$password'";
     $result = mysqli_query($koneksi, $query);
 
-        if (!preg_match("/^[0-9]{10}$/",$username)) {
+        if (!preg_match("/^[0-9]{18}$/",$username)) {
           $error = "Username harus berupa angka 10 atau 18 digit";
       } else {
           $query = "SELECT * FROM adm WHERE id_admin = '$username' AND pass_admin = '$password'";
@@ -33,7 +33,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cari Sini UPNVJ </title>
+    <title>CariSini UPNVJ</title>
+    <link rel="icon" href="logo/logo-tab.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style_login.css">
@@ -41,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 <div class="content-wrapper">
-<img src="logo-title.png" alt="Logo" class="logo">
+<img src="logo/logo-title.png" alt="Logo" class="logo">
     <div class="container">
         <form action="" method="post">
             <h3>Admin</h3>
@@ -50,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<p style='color:red;'>$error</p>";
             }
             ?>
-            <input type="text" placeholder="Masukkan NIM/NIP" name="id_admin" required><br><br>
+            <input type="text" placeholder="Masukkan NIP" name="id_admin" required><br><br>
             <input type="password" placeholder="Masukkan Password" name="pass_admin" required>
             <br><br>
             

@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'koneksi.php';
-$username = $_SESSION['username'];
-$nm_lengkap = $_SESSION['nm_lengkap'];
+$username = $_SESSION['id_admin'];
+$nm_lengkap = $_SESSION['nm_admin'];
 ?>
 
 <!DOCTYPE html>
@@ -199,9 +199,6 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
           <div>
             <input type="submit" name="submit" value="Tambah" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;" onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
-        </form>
-        <form action="ubah_barang.php" method="post" class="d-inline-block mb-2">
-        <input type="hidden" name="kd_brg" value="<?php echo $data['kd_brg']; ?>">
         </form>
       </section>
       <?php

@@ -1,8 +1,8 @@
 <?php
 session_start();
 include 'koneksi.php';
-$username = $_SESSION['username'];
-$nm_lengkap = $_SESSION['nm_lengkap'];
+$username = $_SESSION['id_admin'];
+$nm_lengkap = $_SESSION['nm_admin'];
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +95,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                                 echo "<tr>";
                                 echo "<td>$data[username]</td>";
                                 echo "<td>$data[nm_lengkap]</td>";
-                                echo "<td><img src='data:ktm_ktm;base64, " . base64_encode($data['ktp_ktm']) . "' alt='Image' style='width:120px; height:80px;'></td>";
+                                echo "<td><img src='ktpktm/" . $data['ktp_ktm'] . "' alt='image' style='width:80px;'></td>";
                                 echo "<td>$data[kd_brg]</td>";
                                 echo "<td>$data[nm_brg_ajuan]</td>";
                                 echo "<td>$date</td>";
