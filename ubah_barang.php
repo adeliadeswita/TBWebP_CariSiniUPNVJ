@@ -27,6 +27,9 @@ $nm_lengkap = $_SESSION['nm_admin'];
                         <a class="nav-link" href="./temuan_admin.php">Informasi Temuan</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="./verifikasi.php">Verifikasi</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="./histori_admin.php">Pengambilan</a>
                     </li>
                     <li class="nav-item">
@@ -219,7 +222,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
   ?> 
   </div>
   <footer>
-  All Rights Reserved | © CariSini UPNVJ! - 2024
+    All Rights Reserved | © CariSini UPNVJ! - 2024
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body> 

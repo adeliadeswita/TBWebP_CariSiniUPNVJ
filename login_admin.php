@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM adm WHERE id_admin = '$username' AND pass_admin = '$password'";
     $result = mysqli_query($koneksi, $query);
 
-        if (!preg_match("/^[0-9]{18}$/",$username)) {
+    if (!preg_match("/^[0-9]{18}$/",$username)) {
           $error = "Username harus berupa angka 10 atau 18 digit";
       } else {
           $query = "SELECT * FROM adm WHERE id_admin = '$username' AND pass_admin = '$password'";
@@ -62,9 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <b><a href="index.php">Masuk sebagai Pengguna</a></b>
     </div>
-    <footer>
-        All Rights Reserved | © CariSini UPNVJ! - 2024
-    </footer>
 </body>
 
 </html>

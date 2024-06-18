@@ -63,8 +63,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <b><a href="login_admin.php">Masuk sebagai Admin</a></b>
     </div>
-    <footer>
-        All Rights Reserved | © CariSini UPNVJ! - 2024
-    </footer>
 </body>
 </html>
