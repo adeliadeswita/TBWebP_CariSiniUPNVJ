@@ -62,7 +62,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
         <b><a href="index.php">Masuk sebagai Pengguna</a></b>
     </div>
-
+    <footer>
+        All Rights Reserved | © CariSini UPNVJ! - 2024
+    </footer>
 </body>
 
 </html>

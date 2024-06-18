@@ -27,10 +27,10 @@ $nm_lengkap = $_SESSION['nm_admin'];
                         <a class="nav-link" href="./temuan_admin.php">Informasi Temuan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./verifikasi.php">Verifikasi</a>
+                        <a class="nav-link" href="./histori_admin.php">Pengambilan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./histori_admin.php">Histori</a>
+                        <a class="nav-link" href="./all_histori.php">Histori</a>
                     </li>
                 </ul>
                 
@@ -150,8 +150,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
 
         <form action="tambah_barang.php" method="post" class="form" enctype="multipart/form-data">
           <div class="mb-3">
-            <label for="kd_brg" class="form-label">Kode Barang</label>
-            <input type="text" class="form-control" value="Auto Generated" disabled>
+            <input type="hidden" class="form-control" value="Auto Generated" disabled>
           </div>
           <div class="mb-3">
             <label for="nm_brg" class="form-label">Nama Barang</label>
