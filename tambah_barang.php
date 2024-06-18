@@ -51,7 +51,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
   <div class="flex-container">
     <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
       <header class="header-title mb-2">
-        <h1 class="title"><b><span style="color:#186F65">Form</span><span> Barang Hilang</span></b></h1>
+        <h1 class="title"><b><span style="color:#186F65">Form Penemuan</span><span> Barang Hilang</span></b></h1>
         <hr>
       </header>
 
@@ -84,11 +84,10 @@ $nm_lengkap = $_SESSION['nm_admin'];
             $nama_file = $_FILES['foto_brg']['name'];
             $path = "foto/";
 
-            $nama_file_unik = uniqid() . '_' . $nama_file;
-            $full_path = $path . $nama_file_unik;
+            $full_path = $path . $nama_file;
 
             if (move_uploaded_file($tmp_file, $full_path)) {
-              $foto_brg = $nama_file_unik;
+              $foto_brg = $nama_file;
               echo "File berhasil diunggah ke: " . $full_path;
             } else {
               echo "Gagal mengunggah file.";
@@ -131,7 +130,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
             $result = mysqli_query($koneksi, $query);
 
             if ($result) {
-              $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang \"<b>$kd_brg</b>\" berhasil ditambahkan";
+              $message = "Barang <b>$nm_brg</b> dengan Kode Barang <b>$kd_brg</b> berhasil ditambahkan";
               $_SESSION["message"] = $message;
               header("Location: temuan_admin.php?");
             } else {

@@ -51,7 +51,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
   <div class="flex-container"> 
     <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5"> 
     <header class="header-title mb-2"> 
-    <h1 class="title"><b><span style= "color:#186F65">Form</span><span> Barang Hilang</span></b></h1>
+    <h1 class="title"><b><span style= "color:#186F65">Form Penemuan</span><span> Barang Hilang</span></b></h1>
         <hr> 
     </header> 
     <section>
@@ -123,7 +123,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
               $result_update = mysqli_query($koneksi, $query_update);
 
             if($result_update) {
-                $message = "Barang \"<b>$nm_brg</b>\" dengan Kode Barang \"<b>$kd_brg</b>\" berhasil diubah"; 
+                $message = "Barang <b>$nm_brg</b> dengan Kode Barang <b>$kd_brg</b> berhasil diubah"; 
                 $_SESSION["message"] = $message;
                 header("Location: temuan_admin.php"); 
             }else {

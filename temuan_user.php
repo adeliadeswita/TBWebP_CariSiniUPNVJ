@@ -68,9 +68,9 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                 <?php
                 if (isset($_GET['cari'])) {
                     $cari = $_GET['cari'];
-                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%' AND status = 'Belum Terverifikasi'";
+                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%' AND status IN ('Belum Terverifikasi', 'Tertolak')";
                 } else {
-                    $query = "SELECT * FROM temuan WHERE status = 'Belum Terverifikasi' ORDER BY kd_brg DESC";
+                    $query = "SELECT * FROM temuan WHERE status IN ('Belum Terverifikasi', 'Tertolak') ORDER BY kd_brg DESC";
                 }
 
                 $result = mysqli_query($koneksi, $query);

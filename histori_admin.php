@@ -51,6 +51,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
     </nav>
 
     <div class="flex-container">
+    <div class="d-flex flex-wrap justify-content-between align-items-center">
         <div class="container mt-3 border rounded bg-white py-4 px-5 mb-5">
             <header>
                 <h1 class="title"><a style="text-decoration: none;"><span style= "color:#186F65">Histori </span><span>Verifikasi</span></a></h1>
@@ -63,11 +64,11 @@ $nm_lengkap = $_SESSION['nm_admin'];
                     echo "<div class=\"alert alert-success my3\">".$_GET["message"]."</div>";
                 }
                 ?>
-
-                <div class="table-responsive">
+                <div class="table-responsive">          
                     <table class="table table-striped">
                         <thead>
                             <tr class="kolom">
+                                <th scope="col">Kode Pengajuan</th>
                                 <th scope="col">NIM/NIP</th>
                                 <th scope="col">Nama Lengkap</th>
                                 <th scope="col">KTP/KTM</th>
@@ -92,7 +93,8 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 $raw_date = strtotime($data["tgl_hilang"]);
                                 $date = date("d - m - Y", $raw_date);
 
-                                echo "<tr>";
+                                echo "<tr class='isi'>";
+                                echo "<td>$data[kd_ajuan]</td>";
                                 echo "<td>$data[username]</td>";
                                 echo "<td>$data[nm_lengkap]</td>";
                                 echo "<td><img src='ktpktm/" . $data['ktp_ktm'] . "' alt='image' style='width:80px;'></td>";
@@ -104,8 +106,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "<td>$data[status]</td>";
                                 echo "<td class=\"text-center\">";
                                 echo "<form action=\"histori_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                                echo "<input type=\"hidden\" name=\"kd_brg\" value=\"$data[kd_brg]\">";
-                                echo "<input type=\"hidden\" name=\"username\" value=\"$data[username]\">";
+                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
                                 echo "<input type=\"submit\" name=\"selesai\" value=\"Selesai\" class=\"btn btn-info text-white\"
                                         style=\"width:100px; background-color: #65C18C; color: white;\" 
                                         onmouseenter=\"this.style.backgroundColor='#186F65'\" 
@@ -123,6 +124,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                 </div>
             </section>
         </div>
+    </div>
     </div>
     <footer>
         All Rights Reserved | © CariSini UPNVJ! - 2024
