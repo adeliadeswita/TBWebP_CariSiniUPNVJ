@@ -69,11 +69,6 @@ $nm_lengkap = $_SESSION['nm_admin'];
                 }
                 ?>
             <section>
-            <?php
-                if (isset($_GET["message"])) {
-                    echo "<div class=\"alert alert-success my3\">".$_GET["message"]."</div>";
-                }
-                ?>
                 <div class="table-responsive">          
                     <table class="table table-striped">
                         <thead>

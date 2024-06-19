@@ -68,12 +68,6 @@ $nm_lengkap = $_SESSION['nm_admin'];
                 }
                 ?>
             <section>
-                <?php
-                if (isset($_GET["message"])) {
-                    echo "<div class=\"alert alert-success my3\">".$_GET["message"]."</div>";
-                }
-                ?>
-
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead class="kolom">
@@ -123,7 +117,6 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                     style=\"width:100px; background-color: #65C18C; color: white;\" 
                                     onmouseenter=\"this.style.backgroundColor='#186F65'\" 
                                     onmouseout=\"this.style.backgroundColor='#65C18C'\">";
-                                
                                 echo "</form>";
                                 echo "<form action=\"tolak_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
                                 echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";

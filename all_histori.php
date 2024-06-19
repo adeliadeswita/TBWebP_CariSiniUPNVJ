@@ -94,11 +94,9 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "<td>$data[nm_brg_ajuan]</td>";
                                 echo "<td>$data[spek_brg_ajuan]</td>";
                                 echo "<td>$data[status]</td>";
-                                echo "<td class=\"text-center\">";
-                                }
                                 echo "</td>";
                                 echo "</tr>";
-                    
+                            }
                             mysqli_free_result($result);
                             mysqli_close($koneksi);
                             ?>
