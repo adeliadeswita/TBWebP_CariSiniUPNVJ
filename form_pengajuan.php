@@ -104,6 +104,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <li class="nav-item">
                         <a class="nav-link" href="./histori_user.php">Histori</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./faq.php">FAQ</a>
+                    </li>
                 </ul>
                 
                 <div class="dropdown">

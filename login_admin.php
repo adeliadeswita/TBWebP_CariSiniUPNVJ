@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </form>
         <br>
-        <b><a href="index.php">Masuk sebagai Pengguna</a></b>
+        <b><a href="login_user.php">Masuk sebagai Pengguna</a></b>
     </div>
 </body>
 
