@@ -9,7 +9,7 @@ if (!isset($_SESSION['id_admin']) || !isset($_SESSION['nm_admin'])) {
 
 $username = $_SESSION['id_admin'];
 $nm_lengkap = $_SESSION['nm_admin'];
-
+$error_message = "";
 ?>
 
 <!DOCTYPE html>
@@ -82,53 +82,75 @@ $nm_lengkap = $_SESSION['nm_admin'];
                     $petugas = $data['petugas'];
                     mysqli_free_result($result);
 
-                    if (isset($_FILES['foto_brg']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
-                        $tmp_file = $_FILES['foto_brg']['tmp_name'];
-                        $nama_file = $_FILES['foto_brg']['name'];
-                        $path = "foto/";
-                        $full_path = $path . $nama_file;
-
-                        if (move_uploaded_file($tmp_file, $full_path)) {
-                            if (!empty($foto_brg_lama) && file_exists("foto/" . $foto_brg_lama)) {
-                                unlink("foto/" . $foto_brg_lama);
-                            }
-                            $foto_brg = $nama_file;
-
-                            $query_foto_baru = "UPDATE temuan SET foto_brg='$foto_brg' WHERE kd_brg='$kd_brg'";
-                            $result_foto_baru = mysqli_query($koneksi, $query_foto_baru);
-                            if (!$result_foto_baru) {
-                                echo "Gagal mengupdate nama file foto baru ke database.";
-                            }
+                    if (empty($_POST['nm_brg'])) {
+                        $error_message .= "<li>Nama barang harus diisi</li>";
+                    }
+                    if (empty($_POST['spek_brg'])) {
+                        $error_message .= "<li>Spesifikasi barang harus diisi</li>";
+                    }
+                    if (empty($_POST['tgl_temu'])) {
+                        $error_message .= "<li>Tanggal penemuan harus diisi</li>";
+                    }
+                    if (empty($_POST['lok_temu'])) {
+                        $error_message .= "<li>Lokasi penemuan harus diisi</li>";
+                    }
+                    if (empty($_POST['lok_aman'])) {
+                        $error_message .= "<li>Lokasi pengamanan harus diisi</li>";
+                    }
+                    if (!empty($_FILES['foto_brg']['name']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
+                        if ($_FILES['foto_brg']['size'] > 50 * 1024 * 1024) {
+                            $error_message .= "<li>Ukuran file foto tidak boleh lebih dari 50 MB</li>";
                         }
-                    } else {
-                        $foto_brg = $foto_brg_lama;
                     }
 
-                    $nm_brg = mysqli_real_escape_string($koneksi, $_POST['nm_brg']);
-                    $spek_brg = mysqli_real_escape_string($koneksi, $_POST['spek_brg']);
-                    $tgl_temu = mysqli_real_escape_string($koneksi, $_POST['tgl_temu']);
-                    $lok_temu = mysqli_real_escape_string($koneksi, $_POST['lok_temu']);
-                    $lok_aman = mysqli_real_escape_string($koneksi, $_POST['lok_aman']);
-                    $petugas = mysqli_real_escape_string($koneksi, $_POST['petugas']);
+                    if ($error_message === "") {
+                        if (!empty($_FILES['foto_brg']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
+                            $tmp_file = $_FILES['foto_brg']['tmp_name'];
+                            $nama_file = $_FILES['foto_brg']['name'];
+                            $path = "foto/";
+                            $full_path = $path . $nama_file;
 
-                    $query_update = "UPDATE temuan SET 
-                        nm_brg = '$nm_brg', 
-                        spek_brg = '$spek_brg', 
-                        tgl_temu = '$tgl_temu', 
-                        lok_temu = '$lok_temu', 
-                        foto_brg = '$foto_brg', 
-                        lok_aman = '$lok_aman', 
-                        petugas = '$petugas' 
-                        WHERE kd_brg = '$kd_brg'";
-                    $result_update = mysqli_query($koneksi, $query_update);
+                            if (move_uploaded_file($tmp_file, $full_path)) {
+                                if (!empty($foto_brg_lama) && file_exists("foto/" . $foto_brg_lama)) {
+                                    unlink("foto/" . $foto_brg_lama);
+                                }
+                                $foto_brg = $nama_file;
 
-                    if ($result_update) {
-                        $message = "Barang <b>$nm_brg</b> dengan Kode Barang <b>$kd_brg</b> berhasil diubah";
-                        $_SESSION["message"] = $message;
-                        header("Location: temuan_admin.php");
-                        exit;
-                    } else {
-                        die("Query Error: " . mysqli_errno($koneksi) . " - " . mysqli_error($koneksi));
+                                $query_foto_baru = "UPDATE temuan SET foto_brg='$foto_brg' WHERE kd_brg='$kd_brg'";
+                                $result_foto_baru = mysqli_query($koneksi, $query_foto_baru);
+                                if (!$result_foto_baru) {
+                                    echo "Gagal mengupdate nama file foto baru ke database.";
+                                }
+                            }
+                        } else {
+                            $foto_brg = $foto_brg_lama;
+                        }
+
+                        $nm_brg = mysqli_real_escape_string($koneksi, $_POST['nm_brg']);
+                        $spek_brg = mysqli_real_escape_string($koneksi, $_POST['spek_brg']);
+                        $tgl_temu = mysqli_real_escape_string($koneksi, $_POST['tgl_temu']);
+                        $lok_temu = mysqli_real_escape_string($koneksi, $_POST['lok_temu']);
+                        $lok_aman = mysqli_real_escape_string($koneksi, $_POST['lok_aman']);
+                        $petugas = mysqli_real_escape_string($koneksi, $_POST['petugas']);
+
+                        $query_update = "UPDATE temuan SET 
+                            nm_brg = '$nm_brg', 
+                            spek_brg = '$spek_brg', 
+                            tgl_temu = '$tgl_temu', 
+                            lok_temu = '$lok_temu', 
+                            lok_aman = '$lok_aman', 
+                            petugas = '$petugas' 
+                            WHERE kd_brg = '$kd_brg'";
+                        $result_update = mysqli_query($koneksi, $query_update);
+
+                        if ($result_update) {
+                            $message = "Barang <b>$nm_brg</b> dengan Kode Barang <b>$kd_brg</b> berhasil diubah";
+                            $_SESSION["message"] = $message;
+                            header("Location: temuan_admin.php");
+                            exit;
+                        } else {
+                            die("Query Error: " . mysqli_errno($koneksi) . " - " . mysqli_error($koneksi));
+                        }
                     }
                 } else {
                     $kd_brg = $_GET['kode'];
@@ -158,11 +180,11 @@ $nm_lengkap = $_SESSION['nm_admin'];
                     </div>
                     <div class="mb-3">
                         <label for="nm_brg" class="form-label">Nama Barang</label>
-                        <input type="text" name="nm_brg" id="nm_brg" class="form-control" value="<?php echo isset($nm_brg) ? $nm_brg : ''; ?>" required>
+                        <input type="text" name="nm_brg" id="nm_brg" class="form-control" value="<?php echo isset($nm_brg) ? $nm_brg : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="spek_brg" class="form-label">Deskripsi Barang</label>
-                        <input type="text" name="spek_brg" id="spek_brg" class="form-control" value="<?php echo isset($spek_brg) ? $spek_brg : ''; ?>" required>
+                        <input type="text" name="spek_brg" id="spek_brg" class="form-control" value="<?php echo isset($spek_brg) ? $spek_brg : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="foto_brg" class="form-label">Foto Barang</label>
@@ -175,15 +197,15 @@ $nm_lengkap = $_SESSION['nm_admin'];
                     </div>
                     <div class="mb-3">
                         <label for="tgl_temu" class="form-label">Tanggal Penemuan</label>
-                        <input type="date" name="tgl_temu" id="tgl_temu" class="form-control" value="<?php echo isset($tgl_temu) ? $tgl_temu : ''; ?>" required>
+                        <input type="date" name="tgl_temu" id="tgl_temu" class="form-control" value="<?php echo isset($tgl_temu) ? $tgl_temu : ''; ?>">
                     </div>
                     <div class="mb-3">
                         <label for="lok_temu" class="form-label">Lokasi Penemuan</label>
-                        <input type="text" name="lok_temu" id="lok_temu" class="form-control" value="<?php echo isset($lok_temu) ? $lok_temu : ''; ?>" required>
+                        <input type="text" name="lok_temu" id="lok_temu" class="form-control" value="<?php echo isset($lok_temu) ? $lok_temu : ''; ?>" >
                     </div>
                     <div class="mb-3">
                         <label for="lok_aman" class="form-label">Lokasi Pengamanan</label>
-                        <select name="lok_aman" id="lok_aman" class="form-select" required>
+                        <select name="lok_aman" id="lok_aman" class="form-select">
                             <option value="">Pilih Lokasi</option>
                             <?php
                             $lokasi_aman = ["Ruang Tata Usaha FIK", "Ruang Tata Usaha FH", "Ruang Tata Usaha FIKES", "Ruang Tata Usaha FEB", "Ruang Tata Usaha FK", "Ruang Tata Usaha FT", "Ruang Tata Usaha FISIP"];

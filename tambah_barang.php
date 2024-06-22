@@ -82,22 +82,25 @@ $nm_lengkap = $_SESSION['nm_admin'];
           $lok_aman = htmlentities(strip_tags(trim($_POST["lok_aman"])));
           $petugas = htmlentities(strip_tags(trim($_POST["petugas"])));
 
+          $error_message = isset($error_message) ? $error_message : "";
           if (isset($_FILES['foto_brg']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
             $tmp_file = $_FILES['foto_brg']['tmp_name'];
             $nama_file = $_FILES['foto_brg']['name'];
             $path = "foto/";
 
-            $full_path = $path . $nama_file;
-
-            if (move_uploaded_file($tmp_file, $full_path)) {
-              $foto_brg = $nama_file;
-              echo "File berhasil diunggah ke: " . $full_path;
+            if ($_FILES['foto_brg']['size'] > 50 * 1024 * 1024) {
+              $error_message = "<li>Ukuran file tidak boleh lebih dari 50 MB</li>";
             } else {
-              echo "Gagal mengunggah file.";
+              $full_path = $path . $nama_file;
+
+              if (move_uploaded_file($tmp_file, $full_path)) {
+                $foto_brg = $nama_file;
+                echo "File berhasil diunggah ke: " . $full_path;
+              } else {
+                echo "Gagal mengunggah file.";
+              }
             }
           }
-
-          $error_message = "";
 
           if (empty($nm_brg)) {
             $error_message .= "<li>Nama barang harus diisi</li>";
