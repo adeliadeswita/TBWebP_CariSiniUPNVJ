@@ -150,10 +150,68 @@ body {
     background-color: #186F65;
 }
 
-footer {
-    color: #186F65;
-    text-align: center;
+.footer {
+    font-size: 14px;
+    padding-bottom: 20px;
+    position: relative;
+    color:#186F65;
+    background-color: #F3F8F7;
+}
+
+.footer .footer-top {
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+.footer h4 {
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+}
+
+.footer .footer-links {
+    margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer .footer-links ul i {
+    margin-right: 3px;
+    font-size: 12px;
+    line-height: 0;
+}
+
+.footer .footer-links ul li {
     padding: 10px 0;
-    font-size: small;
-    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+.footer .footer-links ul a {
+    display: inline-block;
+    line-height: 1;
+}
+
+.footer .footer-contact p {
+    margin-bottom: 5px;
+}
+
+.footer .footer-bottom {
+    padding-left: 35%;
+}
+
+.footer .copyright p {
+    margin-bottom: 0;
+}
+
+.footer .credits {
+    font-size: 13px;
 }
