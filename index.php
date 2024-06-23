@@ -56,14 +56,14 @@
             </a>
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Features</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#services">Fitur</a></li>
                     <li><a href="#faq-2">FAQ</a></li>
                     <li class="dropdown btn-getstarted">
-                        <button>Login <i class="fa-solid fa-caret-down" style="color: white;"></i></button>
+                        <button>Masuk <i class="fa-solid fa-caret-down" style="color: white;"></i></button>
                         <ul>
-                            <li><a class="dropdown-item" href="./login_user.php">Login as User</a></li>
-                            <li><a class="dropdown-item" href="./login_admin.php">Login as Admin</a></li>
+                            <li><a class="dropdown-item" href="./login_user.php">Masuk sebagai Pengguna</a></li>
+                            <li><a class="dropdown-item" href="./login_admin.php">Masuk sebagai Admin</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -86,7 +86,7 @@
                             <br><span style="font-weight: 400;">Temukan kembali barang-barang Anda yang hilang dengan cepat dan mudah.</span>
                         </p>
                         <div class="d-flex">
-                            <a href="#about" class="btn-get-started">About CariSini UPNVJ</a>
+                            <a href="#about" class="btn-get-started">Tentang CariSini UPNVJ</a>
                         </div>
                     </div>
                     <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
@@ -103,7 +103,7 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>About CariSini UPNVJ</h2>
+                <h2>Tentang CariSini UPNVJ</h2>
             </div><!-- End Section Title -->
 
             <div class="container">
@@ -123,7 +123,7 @@
 
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
                         <p>Website CariSini dapat membantu masyarakat kampus UPNVJ dalam memecahkan solusi kehilangan barang-barang milik mereka di sekitar kampus. <br>Namun, mengapa website CariSini dibangun ?</p>
-                        <a href="#why-us" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                        <a href="#why-us" class="read-more"><span>Baca Selanjutnya</span><i class="bi bi-arrow-right"></i></a>
                     </div>
 
                 </div>
@@ -192,8 +192,7 @@
 
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
-                <h2>Features</h2>
-                <p>Apa saja fitur pada website ini ?</p>
+                <h2>Fitur</h2>
             </div><!-- End Section Title -->
 
             <div class="container">
@@ -267,7 +266,6 @@
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Frequently Asked Questions</h2>
-                <p>List berikut merupakan pertanyaan-pertanyaan yang sering kali ditanyakan mengenai penggunaan dan teknis dari website CariSini.</p>
             </div><!-- End Section Title -->
 
             <div class="container">
@@ -280,18 +278,18 @@
 
                             <div class="faq-item faq-active" data-aos="fade-up" data-aos-delay="200">
                                 <i class="faq-icon bi bi-question-circle"></i>
-                                <h3>Bagaimana cara mengambil barang yang ditampilkan dalam informasi temuan?</h3>
+                                <h3>Berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?</h3>
                                 <div class="faq-content">
-                                    <p>Barang yang ada dalam tampilan informasi temuan, dapat diambil dengan mengisi form pengajuan barang hilang. Kemudian akan dikonfirmasi oleh admin yang bertanggung jawab.</p>
+                                    <p>Tidak ada batasan waktu dalam laporan barang hilang. Selagi barang hilang belum diambil, maka barang akan terus ditampilkan.</p>
                                 </div>
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div><!-- End Faq item-->
 
                             <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
                                 <i class="faq-icon bi bi-question-circle"></i>
-                                <h3>Mengapa pengajuan pengambilan barang saya ditolak?</h3>
+                                <h3>Apakah ada biaya untuk menggunakan layanan web CariSini?</h3>
                                 <div class="faq-content">
-                                    <p>Pengajuan pengambilan barang bisa ditolak oleh admin jika terdapat perbedaan dalam ciri-ciri barang, perkiraan tanggal hilang barang yang jauh, ataupun kronologi kehilangan barang yang tidak sesuai.</p>
+                                    <p>Layanan ini gratis dan terbuka untuk semua masyarakat UPNVJ yang membutuhkan bantuan dalam menemukan atau melaporkan barang hilang.</p>
                                 </div>
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div><!-- End Faq item-->
@@ -305,23 +303,23 @@
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div><!-- End Faq item-->
 
-                            <!-- <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
+                            <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
                                 <i class="faq-icon bi bi-question-circle"></i>
-                                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
+                                <h3> Apakah terdapat jam operasional website CariSini UPNVJ?</h3>
                                 <div class="faq-content">
-                                    <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
+                                    <p>Web beroperasi selama 24 jam, untuk pengambilan barang dari tata usaha fakultas dimulai dari jam 9:00 - 17:00.</p>
                                 </div>
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div>
 
                             <div class="faq-item" data-aos="fade-up" data-aos-delay="600">
                                 <i class="faq-icon bi bi-question-circle"></i>
-                                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor consequat?</h3>
+                                <h3>Bagaimana cara melaporkan barang yang saya temukan?</h3>
                                 <div class="faq-content">
-                                    <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
+                                    <p>Barang yang ditemukan bisa dilaporakan kepada tata usaha fakultas terdekat dari tempat barang itu ditemukan.</p>
                                 </div>
                                 <i class="faq-toggle bi bi-chevron-right"></i>
-                            </div> -->
+                            </div>
 
                         </div>
 
@@ -336,67 +334,41 @@
     </main>
 
     <footer id="footer" class="footer">
-        <div class="container footer-top">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6 footer-about">
-                    <a href="" class="d-flex align-items-center">
-                        <span class="sitename">Universitas Pembangunan Nasional "Veteran" Jakarta</span>
-                    </a>
-                    <div class="footer-contact pt-3">
-                        <p>Jalan RS. Fatmawati Raya, Pd. Labu, Kec. Cilandak</p>
-                        <p>Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12450</p>
-                        <p class="mt-3"><strong>Phone:</strong> <span>+62 765 6971</span></p>
-                        <p><strong>Email:</strong> <span>upnvj@upnvj.ac.id</span></p>
-                    </div>
-                </div>
-
-                <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#about">About us</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#services">Features</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#faq-2">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <!-- <div class="col-lg-2 col-md-3 footer-links">
-                    <h4>Our Services</h4>
-                    <ul>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Design</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Web Development</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Product Management</a></li>
-                        <li><i class="bi bi-chevron-right"></i> <a href="#">Marketing</a></li>
-                    </ul>
-                </div> -->
-
-                <div class="col-lg-4 col-md-12">
-                    <h4>Follow Us</h4>
-                    <!-- <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p> -->
-                    <br>
-                    <div class="social-links d-flex">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
-                    </div>
-                </div>
-
-            </div>
+    <div class="container footer-top">
+      <div class="row gy-2">
+        <div class="col-lg-2 col-md-3 footer-about">
+            <span><img src="logo/logo-tab.png" style="width: 140px;"></span>
         </div>
 
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">Universitas Pembangunan Nasional Veteran Jakarta</strong> <span>All Rights Reserved</span></p>
-            <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you've purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-            </div>
+        <div class="col-lg-3 col-md-3 footer-links">
+          <p><strong>CariSini UPNVJ</strong> <br> platform daring yang didedikasikan untuk mendata dan 
+          memfasilitasi pencarian barang hilang di lingkungan Universitas Pembangunan 
+          Nasional Veteran Jakarta</p>
         </div>
 
-    </footer>
+        <div class="col-lg-4 col-md-3 footer-links">
+          <div class="footer-contact">
+            <p><strong>Kontak</strong> <br> Universitas Pembangunan Nasional 'Veteran' Jakarta</p>
+            <p>Jl. RS. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta. 12450</p>
+            <p><strong>Email:</strong> <span>carisini@upnvj.com</span></p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <ul>
+            <br>
+            <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#services">Fitur</a></li>
+            <li><i class="bi bi-chevron-right"></i> <a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+      <div class="container copyright mt-4">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">CariSini UPNVJ</strong> <span>All Rights Reserved</span></p>
+      </div>
+    </div>
+  </footer>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

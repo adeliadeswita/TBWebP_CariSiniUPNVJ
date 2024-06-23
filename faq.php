@@ -157,7 +157,7 @@
                     </button>
                     </h2>
                     <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">barang yang ditemukan bisa dilaporakan kepada petugas penanggung jawab dalam tata usaha fakultas terdekat dari tempat barang itu ditemukan.</div>
+                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada petugas penanggung jawab dalam tata usaha fakultas terdekat dari tempat barang itu ditemukan.</div>
                     </div>
                 </div>
 
