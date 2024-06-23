@@ -60,105 +60,115 @@
         </header>
         <div class="accordion-container">
             <div class="accordion accordion-flush" id="accordionFlushExample">
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                    Bagaimana cara mengambil barang yang ditampilkan dalam imformasi temuan?
+                    Bagaimana cara mengambil barang yang ditampilkan dalam informasi temuan?
                     </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">barang yang ada dalam tampilan informasi temuan, dapat diambil dengan mengisi form pengajuan barang hilang. Kemudian akan dikonfirmasi oleh admin yang bertanggung jawab</div>
+                    <div class="accordion-body">Barang yang ada dalam tampilan informasi temuan, dapat diambil dengan mengisi form pengajuan barang hilang. Kemudian akan dikonfirmasi oleh admin yang bertanggung jawab.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                    mengapa pengajuan pengambilan barang saya ditolak?
+                    Mengapa pengajuan pengambilan barang saya ditolak?
                     </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">pengajuan pengambilan barang bisa ditolak oleh admin jika terdapat perbedaan dalam
-                    ciri-ciri barang, perkiraan tanggal hilang barang yang jauh, ataupun kronologi kehilangan barang yang tidak sesuai</div>
+                    <div class="accordion-body">Pengajuan pengambilan barang bisa ditolak oleh admin jika terdapat perbedaan dalam
+                    ciri-ciri barang ataupun kronologi kehilangan barang yang tidak sesuai.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?
+                    Berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?
                     </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">tidak ada Batasan Waktu dalam laporan barang hilang. Selagi barang hilang belum diambil, maka barang akan terus ditampilkan</div>
+                    <div class="accordion-body">Tidak ada batasan waktu dalam laporan barang hilang. Selagi barang hilang belum diambil, maka barang akan terus ditampilkan.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    kapan Waktu yang tepat untuk bisa mengambil barang yang diajukan?
+                    <h2 class="accordion-header" id="flush-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Kapan waktu yang tepat untuk bisa mengambil barang yang diajukan?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">barang hilang yang sudah diajukan untuk diambil, bisa diambil Ketika form pengajuan barang hilang sudah dikonfirmasi dan diterima oleh admin.</div>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Barang hilang yang sudah diajukan untuk diambil, bisa diambil ketika form pengajuan barang hilang sudah dikonfirmasi dan diterima oleh admin.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    apakah ada biaya untuk menggunakan layanan web CariSini?
+                    <h2 class="accordion-header" id="flush-headingFive">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Apakah ada biaya untuk menggunakan layanan web CariSini?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">Layanan ini gratis dan terbuka untuk semua masyarakat UPNVJ yang membutuhkan bantuan dalam menemukan atau melaporkan barang hilang.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h2 class="accordion-header" id="flush-headingSix">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                     Bagaimana cara melaporkan barang yang saya temukan?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">tidak ada Batasan Waktu dalam laporan barang hilang. Selagi barang hilang belum diambil, maka barang akan terus ditampilkan</div>
+                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada tata usaha fakultas terdekat dari tempat barang itu ditemukan.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?
+                    <h2 class="accordion-header" id="flush-headingSeven">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                    Berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">barang yang ditemukan bisa dilaporakan kepada pj fakultas terdekat dari tempat barang itu ditemukan.</div>
+                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada pj fakultas terdekat dari tempat barang itu ditemukan.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                    Jam operasional Lost and Found?
+                    <h2 class="accordion-header" id="flush-headingEight">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                    Apakah terdapat jam operasional website CariSini UPNVJ?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">web beroperasi selama 24 jam, untuk pengambilan barang dari tata usaha fakultas dimulai dari jam 9:00 - 17:00</div>
+                    <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Web beroperasi selama 24 jam, untuk pengambilan barang dari tata usaha fakultas dimulai dari jam 9:00 - 17:00.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h2 class="accordion-header" id="flush-headingNine">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
                     Bagaimana cara melaporkan barang yang saya temukan?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
                     <div class="accordion-body">barang yang ditemukan bisa dilaporakan kepada petugas penanggung jawab dalam tata usaha fakultas terdekat dari tempat barang itu ditemukan.</div>
                     </div>
                 </div>
+
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    <h2 class="accordion-header" id="flush-headingTen">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
                     Apa saja informasi yang perlu diberikan saat melaporkan barang hilang?
                     </button>
                     </h2>
-                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">informasi yang diberikan adalah tanggal berapa barang itu ditemukan dan lokasi tempat penemuan barang hilang</div>
+                    <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Informasi yang diberikan adalah tanggal berapa barang itu ditemukan dan lokasi tempat penemuan barang hilang,</div>
                     </div>
                 </div>
             </div>
