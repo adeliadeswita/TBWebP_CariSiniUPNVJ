@@ -131,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </header>
       
       <section>
-        <form action="form_pengajuan.php" method="post" class="form" enctype="multipart/form-data">
+        <form id="pengajuanForm" action="form_pengajuan.php" method="post" class="form" enctype="multipart/form-data">
           <?php if (!empty($error)) {
             echo "<div class='alert alert-danger'><ul>$error</ul></div>";
           } elseif (isset($berhasil)) {
@@ -174,14 +174,64 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input type="text" name="kron_hilang" id="kron_hilang" class="form-control" value="">
           </div>
           <br>
-          <div class="mb-3">
-            <input type="reset" name="reset" value="Reset" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
-            onmouseenter="this.style.backgroundColor='#186F65'"
-            onmouseout="this.style.backgroundColor='#65C18C'">
-            <input type="submit" name="kirim" value="Kirim" class="btn" style="width: 100px; background-color: #65C18C; color: white;"
-            onmouseenter="this.style.backgroundColor='#186F65'"
-            onmouseout="this.style.backgroundColor='#65C18C'">
+
+          <!-- Tombol Kirim dan Reset dalam div yang sama-->
+          <div>
+            <input type="button" value="Kirim" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kirimModal" 
+            style="width: 100px; background-color: #65C18C; color: white;" 
+            onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
+
+            <input type="button" value="Reset" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#resetModal"
+            style="width: 100px; background-color: #d15e5e; color: white;" 
+            onmouseenter="this.style.backgroundColor='#a81b1b'" onmouseout="this.style.backgroundColor='#d15e5e'">
           </div>
+
+          <!-- Modal Kirim-->
+          <div class="modal fade" id="kirimModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="kirimModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="kirimModalLabel">KONFIRMASI</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Yakin Ingin Mengirim Pengajuan?
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" name="submit" value="Ya" class="btn btn-primary"
+                  style="width: 100px; background-color: #65C18C; color: white;"
+                  onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
+                  <input type="button" value="Tidak" class="btn btn-secondary" data-bs-dismiss="modal"
+                  style="width: 100px; background-color: #d15e5e; color: white;"
+                  onmouseenter="this.style.backgroundColor='#a81b1b'" onmouseout="this.style.backgroundColor='#d15e5e'">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Modal Reset-->
+          <div class="modal fade" id="resetModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="resetModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="resetModalLabel">KONFIRMASI</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Yakin Ingin Mereset Pengajuan?
+                </div>
+                <div class="modal-footer">
+                  <input type="button" onclick="resetForm()" value="Ya" class="btn btn-primary" data-bs-dismiss="modal"
+                  style="width: 100px; background-color: #65C18C; color: white;"
+                  onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
+                  <input type="button" value="Tidak" class="btn btn-secondary" data-bs-dismiss="modal"
+                  style="width: 100px; background-color: #d15e5e; color: white;"
+                  onmouseenter="this.style.backgroundColor='#a81b1b'" onmouseout="this.style.backgroundColor='#d15e5e'">
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </form>
       </section>
     </div>
@@ -191,7 +241,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     function resetForm() {
       const form = document.getElementById('pengajuanForm');
       Array.from(form.elements).forEach(element => {
-        if (!element.readOnly && element.type !== 'kirim' && element.type !== 'button') {
+        if (!element.readOnly && element.type !== 'submit' && element.type !== 'button') {
           element.value = '';
           if (element.type === 'file') {
             element.value = null;
