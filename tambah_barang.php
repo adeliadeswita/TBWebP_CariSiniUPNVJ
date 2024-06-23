@@ -95,7 +95,6 @@ $nm_lengkap = $_SESSION['nm_admin'];
 
               if (move_uploaded_file($tmp_file, $full_path)) {
                 $foto_brg = $nama_file;
-                echo "File berhasil diunggah ke: " . $full_path;
               } else {
                 echo "Gagal mengunggah file.";
               }
