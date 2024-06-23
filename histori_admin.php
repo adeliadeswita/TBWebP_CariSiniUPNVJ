@@ -110,17 +110,44 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "<td>$data[kron_hilang]</td>";
                                 echo "<td>$data[status]</td>";
                                 echo "<td class=\"text-center\">";
+
+                                #Tombol Selesai
                                 echo "<form action=\"histori_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
-                                echo "<input type=\"submit\" name=\"selesai\" value=\"Selesai\" class=\"btn btn-info text-white\"
-                                        style=\"width:100px; background-color: #65C18C; color: white;\" 
-                                        onmouseenter=\"this.style.backgroundColor='#186F65'\" 
-                                        onmouseout=\"this.style.backgroundColor='#65C18C'\">";
-                                }
+                                echo "<button type=\"button\" class=\"btn btn-info text-white\"
+                                style=\"width:100px; background-color: #65C18C; color: white;\"
+                                data-bs-toggle=\"modal\" data-bs-target=\"#modalSelesai$data[kd_ajuan]\"
+                                onmouseenter=\"this.style.backgroundColor='#186F65'\"
+                                onmouseout=\"this.style.backgroundColor='#65C18C'\">Selesai</button>";
                                 echo "</form>";
-                                echo "</td>";
-                                echo "</tr>";
-                    
+                                echo "<div class=\"modal fade\" id=\"modalSelesai$data[kd_ajuan]\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"modalSelesaiLabel$data[kd_ajuan]\" aria-hidden=\"true\">";
+                                echo "<div class=\"modal-dialog modal-dialog-centered\">";
+                                echo "<div class=\"modal-content\">";
+                                echo "<div class=\"modal-header\">";
+                                echo "<h5 class=\"modal-title\" id=\"modalSelesaiLabel$data[kd_ajuan]\">KONFIRMASI</h5>";
+                                echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
+                                echo "</div>";
+
+                                #Modal Selesai
+                                echo "<div class=\"modal-body\">";
+                                echo "Yakin Ingin Menyelesaikan Pengajuan Ini?";
+                                echo "</div>";
+                                echo "<div class=\"modal-footer\">";
+                                echo "<form action=\"histori_aksi.php\" method=\"post\">";
+                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
+                                echo "<button type=\"submit\" name=\"selesai\" class=\"btn btn-primary\"
+                                    style=\"width: 100px; background-color: #65C18C; color: white;\"
+                                    onmouseenter=\"this.style.backgroundColor='#186F65'\"
+                                    onmouseout=\"this.style.backgroundColor='#65C18C'\">Ya</button>";
+                                echo "</form>";
+                                echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\"
+                                    style=\"width: 100px; background-color: #d15e5e; color: white;\"
+                                    onmouseenter=\"this.style.backgroundColor='#a81b1b'\"
+                                    onmouseout=\"this.style.backgroundColor='#d15e5e'\">Tidak</button>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                            }
                             mysqli_free_result($result);
                             mysqli_close($koneksi);
                             ?>

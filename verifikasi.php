@@ -111,22 +111,82 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "<td>$data[kron_hilang]</td>";
                                 echo "<td>$data[status]</td>";
                                 echo "<td class=\"text-center\">";
+
+                                #Tombol Verifikasi
                                 echo "<form action=\"verifikasi_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
-                                echo "<input type=\"submit\" name=\"verifikasi\" value=\"Verifikasi\" class=\"btn btn-info text-white\"
-                                    style=\"width:100px; background-color: #65C18C; color: white;\" 
-                                    onmouseenter=\"this.style.backgroundColor='#186F65'\" 
-                                    onmouseout=\"this.style.backgroundColor='#65C18C'\">";
+                                echo "<button type=\"button\" class=\"btn btn-info text-white\"
+                                style=\"width:100px; background-color: #65C18C; color: white;\"
+                                data-bs-toggle=\"modal\" data-bs-target=\"#modalVerifikasi$data[kd_ajuan]\"
+                                onmouseenter=\"this.style.backgroundColor='#186F65'\"
+                                onmouseout=\"this.style.backgroundColor='#65C18C'\">Verifikasi</button>";
                                 echo "</form>";
+                                echo "<div class=\"modal fade\" id=\"modalVerifikasi$data[kd_ajuan]\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"modalVerifikasiLabel$data[kd_ajuan]\" aria-hidden=\"true\">";
+                                echo "<div class=\"modal-dialog modal-dialog-centered\">";
+                                echo "<div class=\"modal-content\">";
+                                echo "<div class=\"modal-header\">";
+                                echo "<h5 class=\"modal-title\" id=\"modalVerifikasiLabel$data[kd_ajuan]\">KONFIRMASI</h5>";
+                                echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
+                                echo "</div>";
+
+                                #Modal Verifikasi
+                                echo "<div class=\"modal-body\">";
+                                echo "Yakin Ingin Verifikasi Pengajuan Ini?";
+                                echo "</div>";
+                                echo "<div class=\"modal-footer\">";
+                                echo "<form action=\"verifikasi_aksi.php\" method=\"post\">";
+                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
+                                echo "<button type=\"submit\" name=\"verifikasi\" class=\"btn btn-primary\"
+                                    style=\"width: 100px; background-color: #65C18C; color: white;\"
+                                    onmouseenter=\"this.style.backgroundColor='#186F65'\"
+                                    onmouseout=\"this.style.backgroundColor='#65C18C'\">Ya</button>";
+                                echo "</form>";
+                                echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\"
+                                    style=\"width: 100px; background-color: #d15e5e; color: white;\"
+                                    onmouseenter=\"this.style.backgroundColor='#a81b1b'\"
+                                    onmouseout=\"this.style.backgroundColor='#d15e5e'\">Tidak</button>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+
+                                #Tombol Tolak
                                 echo "<form action=\"tolak_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
-                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
-                                echo "<input type=\"submit\" name=\"Tolak\" value=\"Tolak\" class=\"btn btn-info text-white\"
-                                style=\"width:100px; background-color: #d15e5e; color: white;\" 
-                                onmouseenter=\"this.style.backgroundColor='#a81b1b'\" 
-                                onmouseout=\"this.style.backgroundColor='#d15e5e'\">";
+                                echo "<button type=\"button\" class=\"btn btn-info text-white\"
+                                style=\"width:100px; background-color: #d15e5e; color: white;\"
+                                data-bs-toggle=\"modal\" data-bs-target=\"#modalTolak$data[kd_ajuan]\"
+                                onmouseenter=\"this.style.backgroundColor='#a81b1b'\"
+                                onmouseout=\"this.style.backgroundColor='#d15e5e'\">Tolak</button>";
                                 echo "</form>";
-                                echo "</td>";
-                                echo "</tr>";
+                                echo "<div class=\"modal fade\" id=\"modalTolak$data[kd_ajuan]\" data-bs-backdrop=\"static\" data-bs-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"tolakVerifikasiLabel$data[kd_ajuan]\" aria-hidden=\"true\">";
+                                echo "<div class=\"modal-dialog modal-dialog-centered\">";
+                                echo "<div class=\"modal-content\">";
+                                echo "<div class=\"modal-header\">";
+                                echo "<h5 class=\"modal-title\" id=\"tolakVerifikasiLabel$data[kd_ajuan]\">KONFIRMASI</h5>";
+                                echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
+                                echo "</div>";
+
+                                #Modal Tolak
+                                echo "<div class=\"modal-body\">";
+                                echo "Yakin Ingin Menolak Pengajuan Ini?";
+                                echo "</div>";
+                                echo "<div class=\"modal-footer\">";
+                                echo "<form action=\"tolak_aksi.php\" method=\"post\">";
+                                echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
+                                echo "<button type=\"submit\" name=\"Tolak\" class=\"btn btn-primary\"
+                                    style=\"width: 100px; background-color: #65C18C; color: white;\"
+                                    onmouseenter=\"this.style.backgroundColor='#186F65'\"
+                                    onmouseout=\"this.style.backgroundColor='#65C18C'\">Ya</button>";
+                                echo "</form>";
+                                echo "<button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\"
+                                    style=\"width: 100px; background-color: #d15e5e; color: white;\"
+                                    onmouseenter=\"this.style.backgroundColor='#a81b1b'\"
+                                    onmouseout=\"this.style.backgroundColor='#d15e5e'\">Tidak</button>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                echo "</div>";
+                                
+                                
                             }
                             mysqli_free_result($result);
                             mysqli_close($koneksi);

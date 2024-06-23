@@ -200,8 +200,34 @@ $nm_lengkap = $_SESSION['nm_admin'];
           </div>
           <br>
           <div>
-            <input type="submit" name="submit" value="Tambah" class="btn float-start" style="width: 100px; background-color: #65C18C; color: white;" onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
+            <input type="button" value="Tambah" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+            style="width: 100px; background-color: #65C18C; color: white;" 
+            onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
           </div>
+
+           <!-- Modal -->
+           <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">KONFIRMASI</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Yakin Ingin Menambahkan Data Ini?
+                </div>
+                <div class="modal-footer">
+                  <input type="submit" name="submit" value="Ya" class="btn btn-primary"
+                  style="width: 100px; background-color: #65C18C; color: white;"
+                  onmouseenter="this.style.backgroundColor='#186F65'" onmouseout="this.style.backgroundColor='#65C18C'">
+                  <input type="button" value="Tidak" class="btn btn-secondary" data-bs-dismiss="modal"
+                  style="width: 100px; background-color: #d15e5e; color: white;"
+                  onmouseenter="this.style.backgroundColor='#a81b1b'" onmouseout="this.style.backgroundColor='#d15e5e'">
+                </div>
+              </div>
+            </div>
+          </div>
+
         </form>
       </section>
       <?php

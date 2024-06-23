@@ -59,12 +59,12 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
             <section>
         <?php
         $query = "
-            SELECT pengajuan.kd_ajuan, pengajuan.kd_brg, pengajuan.nm_brg_ajuan, pengajuan.status, temuan.petugas
-            FROM pengajuan
-            LEFT JOIN temuan ON pengajuan.kd_brg = temuan.kd_brg
-            WHERE pengajuan.username = '$username'
+        SELECT pengajuan.kd_ajuan, pengajuan.kd_brg, pengajuan.nm_brg_ajuan, pengajuan.status, temuan.petugas, temuan.lok_aman
+        FROM pengajuan
+        LEFT JOIN temuan ON pengajuan.kd_brg = temuan.kd_brg
+        WHERE pengajuan.username = '$username'
         ";
-        
+    
         $result = mysqli_query($koneksi, $query);
 
         if (!$result) {
@@ -80,6 +80,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                         <th scope="col">Kode Barang</th>
                         <th scope="col">Nama Barang</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Lokasi Pengamanan</th>
                         <th scope="col">Petugas</th>
                     </tr>
                 </thead>
@@ -91,6 +92,7 @@ $nm_lengkap = $_SESSION['nm_lengkap'];
                         echo "<td>{$data['kd_brg']}</td>";
                         echo "<td>{$data['nm_brg_ajuan']}</td>";
                         echo "<td>{$data['status']}</td>";
+                        echo "<td>{$data['lok_aman']}</td>";
                         echo "<td>{$data['petugas']}</td>";
                         echo "</tr>";
                     }
