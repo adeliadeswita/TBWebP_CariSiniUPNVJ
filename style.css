@@ -215,3 +215,7 @@ body {
 .footer .credits {
     font-size: 13px;
 }
+
+.d-flex:hover {
+    font-weight: bold;
+}

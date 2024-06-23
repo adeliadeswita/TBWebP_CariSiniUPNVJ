@@ -38,11 +38,26 @@
             display: block;
             text-decoration: none;
             transition: background-color 0.3s ease;
+            padding-right: 200px;
         }
+
 
         .btn-getstarted ul li a.dropdown-item:hover {
             background-color: rgba(0, 0, 0, 0.1);
             color: #186F65;
+        }
+
+        .btn-getstarted:hover ul {
+            left: -9rem;
+            width: 250px;
+        }
+
+        .btn-getstarted ul li a.dropdown-item:active {
+            font-weight: bold;
+        }
+
+        .btn-getstarted ul li a.dropdown-item:focus {
+            font-weight: bold;
         }
     </style>
 </head>
@@ -217,7 +232,7 @@
 
                     <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
                         <div class="service-item position-relative">
-                            <div class="icon"><i class="bi bi-list"></i></div>
+                            <div class="icon"><i class="bi bi-clock"></i></div>
                             <h4 class="stretched-link">Histori Temuan</h4>
                             <p>Menampilkan daftar barang apa saja yang sudah ditemukan dan sudah diverifikasi beserta nama petugas yang bertanggung jawab.</p>
                         </div>
@@ -334,41 +349,41 @@
     </main>
 
     <footer id="footer" class="footer">
-    <div class="container footer-top">
-      <div class="row gy-2">
-        <div class="col-lg-2 col-md-3 footer-about">
-            <span><img src="logo/logo-tab.png" style="width: 140px;"></span>
-        </div>
+        <div class="container footer-top">
+            <div class="row gy-2">
+                <div class="col-lg-2 col-md-3 footer-about">
+                    <span><img src="logo/logo-tab.png" style="width: 140px;"></span>
+                </div>
 
-        <div class="col-lg-3 col-md-3 footer-links">
-          <p><strong>CariSini UPNVJ</strong> <br> platform daring yang didedikasikan untuk mendata dan 
-          memfasilitasi pencarian barang hilang di lingkungan Universitas Pembangunan 
-          Nasional Veteran Jakarta</p>
-        </div>
+                <div class="col-lg-3 col-md-3 footer-links">
+                    <p><strong>CariSini UPNVJ</strong> <br> platform daring yang didedikasikan untuk mendata dan
+                        memfasilitasi pencarian barang hilang di lingkungan Universitas Pembangunan
+                        Nasional Veteran Jakarta</p>
+                </div>
 
-        <div class="col-lg-4 col-md-3 footer-links">
-          <div class="footer-contact">
-            <p><strong>Kontak</strong> <br> Universitas Pembangunan Nasional 'Veteran' Jakarta</p>
-            <p>Jl. RS. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta. 12450</p>
-            <p><strong>Email:</strong> <span>carisini@upnvj.com</span></p>
-          </div>
-        </div>
+                <div class="col-lg-4 col-md-3 footer-links">
+                    <div class="footer-contact">
+                        <p><strong>Kontak</strong> <br> Universitas Pembangunan Nasional 'Veteran' Jakarta</p>
+                        <p>Jl. RS. Fatmawati, Pondok Labu, Jakarta Selatan, DKI Jakarta. 12450</p>
+                        <p><strong>Email:</strong> <span>carisini@upnvj.com</span></p>
+                    </div>
+                </div>
 
-        <div class="col-lg-2 col-md-3 footer-links">
-          <ul>
-            <br>
-            <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#services">Fitur</a></li>
-            <li><i class="bi bi-chevron-right"></i> <a href="#faq">FAQ</a></li>
-          </ul>
-        </div>
-    </div>
-    <div class="container footer-bottom">
-      <div class="container copyright mt-4">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">CariSini UPNVJ</strong> <span>All Rights Reserved</span></p>
-      </div>
-    </div>
-  </footer>
+                <div class="col-lg-2 col-md-3 footer-links">
+                    <ul>
+                        <br>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#about">Tentang</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#services">Fitur</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="container footer-bottom">
+                <div class="container copyright mt-4">
+                    <p>© <span>Copyright</span> <strong class="px-1 sitename">CariSini UPNVJ</strong> <span>All Rights Reserved</span></p>
+                </div>
+            </div>
+    </footer>
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
