@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["selesai"])) {
     if($result) {
         $message = "Pengajuan dengan Kode Pengajuan <b>$kd_ajuan</b> berhasil diambil"; 
         $_SESSION["message"] = $message;
-        header("Location: histori_admin.php"); 
+        header("Location: pengambilan.php"); 
     }else {
         die ("Query Error: ".mysqli_errno($koneksi)." - "
         .mysqli_error($koneksi)); 

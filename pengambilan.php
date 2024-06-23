@@ -32,7 +32,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                         <a class="nav-link" href="./verifikasi.php">Verifikasi</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./histori_admin.php">Pengambilan</a>
+                        <a class="nav-link" href="./pengambilan.php">Pengambilan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./all_histori.php">Histori</a>
@@ -112,7 +112,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "<td class=\"text-center\">";
 
                                 #Tombol Selesai
-                                echo "<form action=\"histori_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
+                                echo "<form action=\"pengambilan_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
                                 echo "<button type=\"button\" class=\"btn btn-info text-white\"
                                 style=\"width:100px; background-color: #65C18C; color: white;\"
                                 data-bs-toggle=\"modal\" data-bs-target=\"#modalSelesai$data[kd_ajuan]\"
@@ -132,7 +132,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                 echo "Yakin Ingin Menyelesaikan Pengajuan Ini?";
                                 echo "</div>";
                                 echo "<div class=\"modal-footer\">";
-                                echo "<form action=\"histori_aksi.php\" method=\"post\">";
+                                echo "<form action=\"pengambilan_aksi.php\" method=\"post\">";
                                 echo "<input type=\"hidden\" name=\"kd_ajuan\" value=\"$data[kd_ajuan]\">";
                                 echo "<button type=\"submit\" name=\"selesai\" class=\"btn btn-primary\"
                                     style=\"width: 100px; background-color: #65C18C; color: white;\"
