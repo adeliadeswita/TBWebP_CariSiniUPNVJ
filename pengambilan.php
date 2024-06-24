@@ -21,6 +21,15 @@ $nm_lengkap = $_SESSION['nm_admin'];
         tbody {
             font-weight: normal;
         }
+
+        .alert-success {
+            font-weight: normal;
+        }
+
+        .alert-success:hover {
+            font-weight: normal;
+        }
+    </style>
     </style>
 </head>
 

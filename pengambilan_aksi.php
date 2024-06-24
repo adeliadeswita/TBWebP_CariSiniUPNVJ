@@ -9,13 +9,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["selesai"])) {
 
     $result = mysqli_query($koneksi, $query);
 
-    if($result) {
-        $message = "Pengajuan dengan Kode Pengajuan <b>$kd_ajuan</b> berhasil diambil"; 
+    if ($result) {
+        $message = "Pengajuan dengan Kode Pengajuan <b>$kd_ajuan</b> berhasil diambil";
         $_SESSION["message"] = $message;
-        header("Location: pengambilan.php"); 
-    }else {
-        die ("Query Error: ".mysqli_errno($koneksi)." - "
-        .mysqli_error($koneksi)); 
+        header("Location: pengambilan.php");
+    } else {
+        die("Query Error: " . mysqli_errno($koneksi) . " - "
+            . mysqli_error($koneksi));
     }
 }
-?>
