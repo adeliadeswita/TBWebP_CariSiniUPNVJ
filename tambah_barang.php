@@ -157,8 +157,7 @@ include "navbar_admin.php"
               $lokasi_aman = ["Ruang Tata Usaha FIK", "Ruang Tata Usaha FH", "Ruang Tata Usaha FIKES", "Ruang Tata Usaha FEB", "Ruang Tata Usaha FK", "Ruang Tata Usaha FT", "Ruang Tata Usaha FISIP"];
               foreach ($lokasi_aman as $lokasi) {
                 if (isset($lok_aman) && $lok_aman === $lokasi) {
-                  echo "<option value=\"$lokasi\" selected>$lokasi
-                                    </option>";
+                  echo "<option value=\"$lokasi\" selected>$lokasi</option>";
                 } else {
                   echo "<option value=\"$lokasi\">$lokasi</option>";
                 }

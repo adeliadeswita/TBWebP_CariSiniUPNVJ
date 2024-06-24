@@ -103,7 +103,6 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                     data-bs-toggle=\"modal\" data-bs-target=\"#modalSelesai$data[kd_ajuan]\"
                                     onmouseenter=\"this.style.backgroundColor='#186F65'\"
                                     onmouseout=\"this.style.backgroundColor='#65C18C'\">Selesai</button>";
-                                    echo "</form>";
                                     echo "<div class=\"modal fade\" id=\"modalSelesai$data[kd_ajuan]\" data-bs-backdrop=\"static\"
                                     data-bs-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"modalSelesaiLabel$data[kd_ajuan]\" aria-hidden=\"true\">";
                                     echo "<div class=\"modal-dialog modal-dialog-centered\">";
