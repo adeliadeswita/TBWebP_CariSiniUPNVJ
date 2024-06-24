@@ -84,7 +84,7 @@ include "navbar_admin.php"
                                 echo "<td>$data[status]</td>";
                                 echo "<td class=\"text-center\">";
 
-                                #Tombol Verifikasi
+                                // Tombol Verifikasi
                                 echo "<form action=\"verifikasi_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
                                 echo "<button type=\"button\" class=\"btn btn-info text-white\"
                                 style=\"width:100px; background-color: #65C18C; color: white;\"
@@ -100,7 +100,7 @@ include "navbar_admin.php"
                                 echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
                                 echo "</div>";
 
-                                #Modal Verifikasi
+                                // Modal Verifikasi
                                 echo "<div class=\"modal-body\">";
                                 echo "Yakin Ingin Verifikasi Pengajuan Ini?";
                                 echo "</div>";
@@ -121,7 +121,7 @@ include "navbar_admin.php"
                                 echo "</div>";
                                 echo "</div>";
 
-                                #Tombol Tolak
+                                // Tombol Tolak
                                 echo "<form action=\"tolak_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
                                 echo "<button type=\"button\" class=\"btn btn-info text-white\"
                                 style=\"width:100px; background-color: #d15e5e; color: white;\"
@@ -137,7 +137,7 @@ include "navbar_admin.php"
                                 echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
                                 echo "</div>";
 
-                                #Modal Tolak
+                                // Modal Tolak
                                 echo "<div class=\"modal-body\">";
                                 echo "Yakin Ingin Menolak Pengajuan Ini?";
                                 echo "</div>";

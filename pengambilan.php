@@ -88,7 +88,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                     echo "<td>$data[status]</td>";
                                     echo "<td class=\"text-center\">";
 
-                                    #Tombol Selesai
+                                    // Tombol Selesai
                                     echo "<form action=\"pengambilan_aksi.php\" method=\"post\" class=\"d-inline-block mb-2\">";
                                     echo "<button type=\"button\" class=\"btn btn-info text-white\"
                                 style=\"width:100px; background-color: #65C18C; color: white;\"
@@ -104,7 +104,7 @@ $nm_lengkap = $_SESSION['nm_admin'];
                                     echo "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>";
                                     echo "</div>";
 
-                                    #Modal Selesai
+                                    // Modal Selesai
                                     echo "<div class=\"modal-body\">";
                                     echo "Yakin Ingin Menyelesaikan Pengajuan Ini?";
                                     echo "</div>";
