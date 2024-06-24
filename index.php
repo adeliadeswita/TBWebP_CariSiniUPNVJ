@@ -41,7 +41,6 @@
             padding-right: 200px;
         }
 
-
         .btn-getstarted ul li a.dropdown-item:hover {
             background-color: rgba(0, 0, 0, 0.1);
             color: #186F65;

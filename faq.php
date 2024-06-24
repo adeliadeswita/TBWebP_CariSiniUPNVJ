@@ -1,3 +1,10 @@
+<?php
+session_start();
+include 'koneksi.php';
+$username = $_SESSION['username'];
+$nm_lengkap = $_SESSION['nm_lengkap'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
