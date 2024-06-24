@@ -76,6 +76,7 @@ include "navbar_user.php"
         </div>
         </section>
     </div>
+    </div>
     <?php 
     include "footer.php"
     ?>
