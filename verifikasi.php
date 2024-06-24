@@ -90,7 +90,6 @@ include "navbar_admin.php"
                                 data-bs-toggle=\"modal\" data-bs-target=\"#modalVerifikasi$data[kd_ajuan]\"
                                 onmouseenter=\"this.style.backgroundColor='#186F65'\"
                                 onmouseout=\"this.style.backgroundColor='#65C18C'\">Verifikasi</button>";
-                                echo "</form>";
                                 echo "<div class=\"modal fade\" id=\"modalVerifikasi$data[kd_ajuan]\" data-bs-backdrop=\"static\" 
                                 data-bs-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"modalVerifikasiLabel$data[kd_ajuan]\" aria-hidden=\"true\">";
                                 echo "<div class=\"modal-dialog modal-dialog-centered\">";
@@ -127,7 +126,6 @@ include "navbar_admin.php"
                                 data-bs-toggle=\"modal\" data-bs-target=\"#modalTolak$data[kd_ajuan]\"
                                 onmouseenter=\"this.style.backgroundColor='#a81b1b'\"
                                 onmouseout=\"this.style.backgroundColor='#d15e5e'\">Tolak</button>";
-                                echo "</form>";
                                 echo "<div class=\"modal fade\" id=\"modalTolak$data[kd_ajuan]\" data-bs-backdrop=\"static\"
                                 data-bs-keyboard=\"false\" tabindex=\"-1\" aria-labelledby=\"tolakVerifikasiLabel$data[kd_ajuan]\" aria-hidden=\"true\">";
                                 echo "<div class=\"modal-dialog modal-dialog-centered\">";
