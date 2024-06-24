@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2024 at 08:34 PM
+-- Generation Time: Jun 24, 2024 at 05:25 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -39,7 +39,12 @@ CREATE TABLE `adm` (
 
 INSERT INTO `adm` (`nm_admin`, `id_admin`, `pass_admin`) VALUES
 ('Budi Santoso', '123456789012345678', 'adm1'),
-('Andi Wicaksana', '123456789012345679', 'adm2');
+('Andi Wicaksana', '123456789012345679', 'adm2'),
+('Dimas Pratama', '123456789012345680', 'adm3'),
+('Joko Pradipta', '123456789012345681', 'adm4'),
+('Yoga Wirawan', '123456789012345682', 'adm5'),
+('Bayu Prakoso', '123456789012345683', 'adm6'),
+('Rian Saputra', '123456789012345684', 'adm7');
 
 --
 -- Indexes for dumped tables
