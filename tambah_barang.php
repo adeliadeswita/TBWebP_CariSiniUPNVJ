@@ -77,7 +77,7 @@ include "navbar_admin.php"
             $error_message .= "<li>Nama barang harus diisi</li>";
           }
           if (empty($spek_brg)) {
-            $error_message .= "<li>Spesifikasi barang harus diisi</li>";
+            $error_message .= "<li>Deskripsi barang harus diisi</li>";
           }
           if (empty($tgl_temu)) {
             $error_message .= "<li>Tanggal penemuan harus diisi</li>";

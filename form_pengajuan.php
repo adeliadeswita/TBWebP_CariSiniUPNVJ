@@ -36,13 +36,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error .= "<li>Nama barang harus diisi</li>";
   }
   if (empty($spek_brg_ajuan)) {
-    $error .= "<li>Spesifikasi barang harus diisi</li>";
+    $error .= "<li>Deskripsi barang harus diisi</li>";
   }
   if (empty($tgl_hilang)) {
     $error .= "<li>Tanggal kehilangan harus diisi</li>";
   }
   if (empty($kron_hilang)) {
-    $error .= "<li>Kronologi hilang harus diisi</li>";
+    $error .= "<li>Kronologi kehilangan harus diisi</li>";
   }
   if ($error === "") {
     $query_check_duplicate = "SELECT * FROM pengajuan WHERE kd_brg = '$kd_brg' AND username = '$username' AND status = 'Belum Terverifikasi'";
@@ -109,7 +109,7 @@ include "navbar_user.php"
       </header>
       
       <section>
-        <form action="form_pengajuan.php" method="post" class="form" enctype="multipart/form-data">
+        <form action="form_pengajuan.php" id="pengajuanForm" method="post" class="form" enctype="multipart/form-data">
           <?php if (!empty($error)) {
             echo "<div class='alert alert-danger'><ul>$error</ul></div>";
           } elseif (isset($berhasil)) {
