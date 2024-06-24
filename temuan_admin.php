@@ -60,7 +60,7 @@ include "navbar_admin.php"
 
                 if (isset($_GET['cari'])) {
                     $cari = $_GET['cari'];
-                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%' AND status IN ('Belum Terverifikasi', 'Tertolak')";
+                    $query = "SELECT * FROM temuan WHERE nm_brg LIKE '%$cari%' AND status IN ('Belum Terverifikasi', 'Tertolak') ORDER BY kd_brg DESC";
                 } else {
                     $query = "SELECT * FROM temuan WHERE status IN ('Belum Terverifikasi', 'Tertolak') ORDER BY kd_brg DESC";
                 }
