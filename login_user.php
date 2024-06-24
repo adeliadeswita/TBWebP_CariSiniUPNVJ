@@ -8,8 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT * FROM pengguna WHERE username = '$username' AND pass = '$password'";
     $result = mysqli_query($koneksi, $query);
 
-    if (!preg_match("/^[0-9]{10}(?:[0-9]{8})?$/",$username)) {
-        $error = "Username harus berupa angka 10 atau 18 digit";
+    if (!preg_match("/^[0-9]{10}(?:[0-9]{8})?$/", $username)) {
+        $error = "Username harus berupa 10 atau 18 digit";
     } else {
         $query = "SELECT * FROM pengguna WHERE username = '$username' AND pass = '$password'";
         $result = mysqli_query($koneksi, $query);
@@ -43,25 +43,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
     <div class="content-wrapper">
-    <img src="logo/logo-title.png" alt="Logo" class="logo">
+        <img src="logo/logo-title.png" alt="Logo" class="logo">
         <div class="container">
-        <form action="" method="post">
-            <h3>Pengguna</h3>
-            <?php
-            if (isset($error)) {
-                echo "<p style='color:red;'>$error</p>";
-            }
-            ?>
-            <input type="text" placeholder="Masukkan NIM/NIP" name="username" required><br><br>
-            <input type="password" placeholder="Masukkan Kata Sandi" name="password" required>
-            <br><br>
-            
-            <div class="login-btn">
-                <input type="submit" value="Masuk">
-            </div>
-        </form>
-        <br>
-        <b><a href="login_admin.php">Masuk sebagai Admin</a></b>
-    </div>
+            <form action="" method="post">
+                <h3>Pengguna</h3>
+                <?php
+                if (isset($error)) {
+                    echo "<p style='color:red;'>$error</p>";
+                }
+                ?>
+                <input type="text" placeholder="Masukkan NIM/NIP" name="username" required><br><br>
+                <input type="password" placeholder="Masukkan Kata Sandi" name="password" required>
+                <br><br>
+
+                <div class="login-btn">
+                    <input type="submit" value="Masuk">
+                </div>
+            </form>
+            <br>
+            <b><a href="login_admin.php">Masuk sebagai Admin</a></b>
+        </div>
 </body>
+
 </html>
