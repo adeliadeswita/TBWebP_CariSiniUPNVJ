@@ -23,8 +23,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $ktp_ktm = $_FILES['ktp_ktm']['name'];
   $ktp_ktm_tmp = $_FILES['ktp_ktm']['tmp_name'];
+  $ktp_ktm_size = $_FILES['ktp_ktm']['size'];
   $upload_dir = 'ktpktm/';
   $error = "";
+
+  if ($ktp_ktm_size > 10 * 1024 * 1024) {
+    $error .= "<li>Ukuran file foto tidak boleh lebih dari 10 MB</li>";
+  }
 
   if (!isset($_FILES['ktp_ktm']) || $_FILES['ktp_ktm']['error'] != UPLOAD_ERR_OK) {
     $error .= "<li>KTP/KTM harus diupload</li>";
