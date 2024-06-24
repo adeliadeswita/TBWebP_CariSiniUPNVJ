@@ -2,11 +2,6 @@
 session_start();
 include 'koneksi.php';
 
-if (!isset($_SESSION['id_admin']) || !isset($_SESSION['nm_admin'])) {
-    header("Location: login_admin.php");
-    exit;
-}
-
 $username = $_SESSION['id_admin'];
 $nm_lengkap = $_SESSION['nm_admin'];
 $error_message = "";
@@ -58,7 +53,7 @@ include "navbar_admin.php"
                         $error_message .= "<li>Nama barang harus diisi</li>";
                     }
                     if (empty($_POST['spek_brg'])) {
-                        $error_message .= "<li>Spesifikasi barang harus diisi</li>";
+                        $error_message .= "<li>Deskripsi barang harus diisi</li>";
                     }
                     if (empty($_POST['tgl_temu'])) {
                         $error_message .= "<li>Tanggal penemuan harus diisi</li>";
