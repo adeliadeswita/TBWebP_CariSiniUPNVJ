@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = mysqli_query($koneksi, $query);
 
     if (!preg_match("/^[0-9]{18}$/",$username)) {
-          $error = "Username harus berupa angka 10 atau 18 digit";
+          $error = "Username harus berupa 18 digit";
       } else {
           $query = "SELECT * FROM adm WHERE id_admin = '$username' AND pass_admin = '$password'";
           $result = mysqli_query($koneksi, $query);
