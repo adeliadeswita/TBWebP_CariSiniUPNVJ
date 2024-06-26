@@ -65,8 +65,8 @@ include "navbar_admin.php"
                         $error_message .= "<li>Lokasi pengamanan harus diisi</li>";
                     }
                     if (!empty($_FILES['foto_brg']['name']) && $_FILES['foto_brg']['error'] === UPLOAD_ERR_OK) {
-                        if ($_FILES['foto_brg']['size'] > 50 * 1024 * 1024) {
-                            $error_message .= "<li>Ukuran file foto tidak boleh lebih dari 50 MB</li>";
+                        if ($_FILES['foto_brg']['size'] > 10 * 1024 * 1024) {
+                            $error_message .= "<li>Ukuran file foto tidak boleh lebih dari 10 MB</li>";
                         }
                     }
 

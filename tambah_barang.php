@@ -60,8 +60,8 @@ include "navbar_admin.php"
             $nama_file = $_FILES['foto_brg']['name'];
             $path = "foto/";
 
-            if ($_FILES['foto_brg']['size'] > 50 * 1024 * 1024) {
-              $error_message = "<li>Ukuran file tidak boleh lebih dari 50 MB</li>";
+            if ($_FILES['foto_brg']['size'] > 10 * 1024 * 1024) {
+              $error_message = "<li>Ukuran file tidak boleh lebih dari 10 MB</li>";
             } else {
               $full_path = $path . $nama_file;
 
