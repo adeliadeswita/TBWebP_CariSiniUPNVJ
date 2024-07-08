@@ -310,16 +310,7 @@
 
                             <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
                                 <i class="faq-icon bi bi-question-circle"></i>
-                                <h3>Berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?</h3>
-                                <div class="faq-content">
-                                    <p>Tidak ada batasan waktu dalam laporan barang hilang. Selagi barang hilang belum diambil, maka barang akan terus ditampilkan</p>
-                                </div>
-                                <i class="faq-toggle bi bi-chevron-right"></i>
-                            </div><!-- End Faq item-->
-
-                            <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                                <i class="faq-icon bi bi-question-circle"></i>
-                                <h3> Apakah terdapat jam operasional website CariSini UPNVJ?</h3>
+                                <h3>Apakah terdapat jam operasional website CariSini UPNVJ?</h3>
                                 <div class="faq-content">
                                     <p>Web beroperasi selama 24 jam, untuk pengambilan barang dari tata usaha fakultas dimulai dari jam 9:00 - 17:00.</p>
                                 </div>
@@ -355,7 +346,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-3 footer-links">
-                    <p><strong>CariSini UPNVJ</strong> <br> platform daring yang didedikasikan untuk mendata dan
+                    <p><strong>CariSini UPNVJ</strong> <br>Platform daring yang didedikasikan untuk mendata dan
                         memfasilitasi pencarian barang hilang di lingkungan Universitas Pembangunan
                         Nasional Veteran Jakarta</p>
                 </div>

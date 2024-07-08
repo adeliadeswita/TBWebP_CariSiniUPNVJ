@@ -48,7 +48,9 @@ include "navbar_user.php"
                     </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Barang yang ada dalam tampilan informasi temuan, dapat diambil dengan mengisi form pengajuan barang hilang. Kemudian akan dikonfirmasi oleh admin yang bertanggung jawab.</div>
+                    <div class="accordion-body">Barang yang ada dalam tampilan informasi temuan, 
+                    dapat diambil dengan mengisi form pengajuan barang hilang. 
+                    Kemudian akan dikonfirmasi oleh Admin apakah pengajuan terverifikasi atau ditolak.</div>
                     </div>
                 </div>
 
@@ -59,7 +61,7 @@ include "navbar_user.php"
                     </button>
                     </h2>
                     <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Pengajuan pengambilan barang bisa ditolak oleh admin jika terdapat perbedaan dalam
+                    <div class="accordion-body">Pengajuan pengambilan barang bisa ditolak oleh Admin jika terdapat perbedaan dalam
                     ciri-ciri barang ataupun kronologi kehilangan barang yang tidak sesuai.</div>
                     </div>
                 </div>
@@ -71,7 +73,8 @@ include "navbar_user.php"
                     </button>
                     </h2>
                     <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Tidak ada batasan waktu dalam laporan barang hilang. Selagi barang hilang belum diambil, maka barang akan terus ditampilkan.</div>
+                    <div class="accordion-body">Tidak ada batasan waktu dalam laporan barang hilang. 
+                        Selagi barang hilang belum diambil, maka barang akan terus ditampilkan.</div>
                     </div>
                 </div>
 
@@ -82,7 +85,9 @@ include "navbar_user.php"
                     </button>
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Barang hilang yang sudah diajukan untuk diambil, bisa diambil ketika form pengajuan barang hilang sudah dikonfirmasi dan diterima oleh admin.</div>
+                    <div class="accordion-body">Barang hilang yang sudah diajukan untuk diambil, 
+                        bisa diambil ketika form pengajuan barang hilang sudah diverifikasi oleh Admin
+                        dengan mengecek status pengajuan pada histori.</div>
                     </div>
                 </div>
 
@@ -93,7 +98,8 @@ include "navbar_user.php"
                     </button>
                     </h2>
                     <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Layanan ini gratis dan terbuka untuk semua masyarakat UPNVJ yang membutuhkan bantuan dalam menemukan atau melaporkan barang hilang.</div>
+                    <div class="accordion-body">Layanan ini gratis dan terbuka untuk semua masyarakat UPNVJ 
+                        yang membutuhkan bantuan dalam menemukan atau melaporkan barang hilang.</div>
                     </div>
                 </div>
 
@@ -104,51 +110,32 @@ include "navbar_user.php"
                     </button>
                     </h2>
                     <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada tata usaha fakultas terdekat dari tempat barang itu ditemukan.</div>
+                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada tata usaha fakultas terdekat 
+                    dari tempat barang itu ditemukan, kemudian Admin akan memasukkan info barang tersebut ke dalam website.</div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingSeven">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
-                    Berapa lama laporan barang hilang atau ditemukan akan ditampilkan di situs?
+                    Apakah terdapat jam operasional website CariSini UPNVJ?
                     </button>
                     </h2>
                     <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada pj fakultas terdekat dari tempat barang itu ditemukan.</div>
+                    <div class="accordion-body">Web beroperasi selama 24 jam, untuk pengambilan barang dari 
+                    tata usaha fakultas dimulai dari jam 9:00 - 17:00.</div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingEight">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
-                    Apakah terdapat jam operasional website CariSini UPNVJ?
-                    </button>
-                    </h2>
-                    <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Web beroperasi selama 24 jam, untuk pengambilan barang dari tata usaha fakultas dimulai dari jam 9:00 - 17:00.</div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingNine">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
-                    Bagaimana cara melaporkan barang yang saya temukan?
-                    </button>
-                    </h2>
-                    <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Barang yang ditemukan bisa dilaporakan kepada petugas penanggung jawab dalam tata usaha fakultas terdekat dari tempat barang itu ditemukan.</div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTen">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
                     Apa saja informasi yang perlu diberikan saat melaporkan barang hilang?
                     </button>
                     </h2>
-                    <div id="flush-collapseTen" class="accordion-collapse collapse" aria-labelledby="flush-headingTen" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Informasi yang diberikan adalah tanggal berapa barang itu ditemukan dan lokasi tempat penemuan barang hilang,</div>
+                    <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Informasi yang diberikan adalah tanggal berapa barang itu 
+                    ditemukan dan lokasi tempat penemuan barang hilang.</div>
                     </div>
                 </div>
             </div>

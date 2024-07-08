@@ -19,7 +19,7 @@
             </div>
 
             <div class="col-lg-5 col-md-3 footer-links">
-            <p><strong>CariSini UPNVJ</strong> <br> platform daring yang didedikasikan untuk mendata dan 
+            <p><strong>CariSini UPNVJ</strong> <br>Platform daring yang didedikasikan untuk mendata dan 
             memfasilitasi pencarian barang hilang di lingkungan Universitas Pembangunan 
             Nasional Veteran Jakarta</p>
             </div>
